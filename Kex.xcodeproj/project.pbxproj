@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B68CAF8CF7C539F62BEBBD8 /* Pods_Kex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9984B561977F90CCA2BA2353 /* Pods_Kex.framework */; };
+		4804AC2CF2CFCC720FEAFE91 /* Pods_KexTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D2B47CD3773005DA15D35E /* Pods_KexTests.framework */; };
+		7966DA250E241A97D61A7ED9 /* Pods_Kex_KexUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E53CBCF964C066EF14B18CA /* Pods_Kex_KexUITests.framework */; };
+		FE178EE124C8DCD1002A01A8 /* KexApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE178EE024C8DCD1002A01A8 /* KexApi.swift */; };
+		FE798F7D24C8E72B0061B89C /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE798F7C24C8E72B0061B89C /* LoginRequest.swift */; };
 		FEC5474024B96A8E00AEBD9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5473F24B96A8E00AEBD9B /* AppDelegate.swift */; };
 		FEC5474224B96A8E00AEBD9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5474124B96A8E00AEBD9B /* SceneDelegate.swift */; };
 		FEC5474424B96A8E00AEBD9B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5474324B96A8E00AEBD9B /* FirstViewController.swift */; };
@@ -17,9 +22,11 @@
 		FEC5475924B96A8F00AEBD9B /* KexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5475824B96A8F00AEBD9B /* KexTests.swift */; };
 		FEC5476424B96A8F00AEBD9B /* KexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5476324B96A8F00AEBD9B /* KexUITests.swift */; };
 		FEC5477324B973BE00AEBD9B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5477224B973BE00AEBD9B /* RegistrationViewController.swift */; };
-		FEC5477524B9F42F00AEBD9B /* MyFirstSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5477424B9F42F00AEBD9B /* MyFirstSegue.swift */; };
 		FEC5477824B9F6B900AEBD9B /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5477724B9F6B900AEBD9B /* Authorization.swift */; };
 		FEC5477F24BAEFB000AEBD9B /* UserActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5477E24BAEFB000AEBD9B /* UserActions.swift */; };
+		FEDFEFE124C8F33A004A3E0C /* RegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDFEFE024C8F33A004A3E0C /* RegistrationRequest.swift */; };
+		FEDFEFE324C8F96C004A3E0C /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDFEFE224C8F96C004A3E0C /* Sex.swift */; };
+		FEF8E1B624CF573E0010CFA0 /* RegistrationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF8E1B524CF573E0010CFA0 /* RegistrationResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E53CBCF964C066EF14B18CA /* Pods_Kex_KexUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kex_KexUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28EE4BB6F4E9CB5913AE482F /* Pods-Kex-KexUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kex-KexUITests.release.xcconfig"; path = "Target Support Files/Pods-Kex-KexUITests/Pods-Kex-KexUITests.release.xcconfig"; sourceTree = "<group>"; };
+		32AC3FF16C40091DBFAD507E /* Pods-Kex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kex.release.xcconfig"; path = "Target Support Files/Pods-Kex/Pods-Kex.release.xcconfig"; sourceTree = "<group>"; };
+		39B4A47648C8051F0CEEE3DA /* Pods-KexTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KexTests.debug.xcconfig"; path = "Target Support Files/Pods-KexTests/Pods-KexTests.debug.xcconfig"; sourceTree = "<group>"; };
+		996E10FD571981C83FDF7AEA /* Pods-Kex-KexUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kex-KexUITests.debug.xcconfig"; path = "Target Support Files/Pods-Kex-KexUITests/Pods-Kex-KexUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9984B561977F90CCA2BA2353 /* Pods_Kex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF1B26E97721241A6D6A1C93 /* Pods-Kex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kex.debug.xcconfig"; path = "Target Support Files/Pods-Kex/Pods-Kex.debug.xcconfig"; sourceTree = "<group>"; };
+		C5D2B47CD3773005DA15D35E /* Pods_KexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC204FD24ECD90B7C1D41D70 /* Pods-KexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KexTests.release.xcconfig"; path = "Target Support Files/Pods-KexTests/Pods-KexTests.release.xcconfig"; sourceTree = "<group>"; };
+		FE178EE024C8DCD1002A01A8 /* KexApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KexApi.swift; sourceTree = "<group>"; };
+		FE798F7C24C8E72B0061B89C /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		FEC5473C24B96A8E00AEBD9B /* Kex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC5473F24B96A8E00AEBD9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC5474124B96A8E00AEBD9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,10 +73,12 @@
 		FEC5475F24B96A8F00AEBD9B /* KexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC5476324B96A8F00AEBD9B /* KexUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KexUITests.swift; sourceTree = "<group>"; };
 		FEC5476524B96A8F00AEBD9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEC5477224B973BE00AEBD9B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		FEC5477424B9F42F00AEBD9B /* MyFirstSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFirstSegue.swift; sourceTree = "<group>"; };
+		FEC5477224B973BE00AEBD9B /* RegistrationViewController.swift */ = {isa = PBXFileReference; indentWidth = 3; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		FEC5477724B9F6B900AEBD9B /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		FEC5477E24BAEFB000AEBD9B /* UserActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActions.swift; sourceTree = "<group>"; };
+		FEDFEFE024C8F33A004A3E0C /* RegistrationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRequest.swift; sourceTree = "<group>"; };
+		FEDFEFE224C8F96C004A3E0C /* Sex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sex.swift; sourceTree = "<group>"; };
+		FEF8E1B524CF573E0010CFA0 /* RegistrationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B68CAF8CF7C539F62BEBBD8 /* Pods_Kex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4804AC2CF2CFCC720FEAFE91 /* Pods_KexTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,12 +102,55 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7966DA250E241A97D61A7ED9 /* Pods_Kex_KexUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		622D9983CF956063C917B464 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF1B26E97721241A6D6A1C93 /* Pods-Kex.debug.xcconfig */,
+				32AC3FF16C40091DBFAD507E /* Pods-Kex.release.xcconfig */,
+				996E10FD571981C83FDF7AEA /* Pods-Kex-KexUITests.debug.xcconfig */,
+				28EE4BB6F4E9CB5913AE482F /* Pods-Kex-KexUITests.release.xcconfig */,
+				39B4A47648C8051F0CEEE3DA /* Pods-KexTests.debug.xcconfig */,
+				CC204FD24ECD90B7C1D41D70 /* Pods-KexTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CB6BCC9D562AC7AEC3439B5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9984B561977F90CCA2BA2353 /* Pods_Kex.framework */,
+				1E53CBCF964C066EF14B18CA /* Pods_Kex_KexUITests.framework */,
+				C5D2B47CD3773005DA15D35E /* Pods_KexTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE798F7A24C8E70B0061B89C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE798F7B24C8E7120061B89C /* Network */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FE798F7B24C8E7120061B89C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FE798F7C24C8E72B0061B89C /* LoginRequest.swift */,
+				FEDFEFE024C8F33A004A3E0C /* RegistrationRequest.swift */,
+				FEF8E1B524CF573E0010CFA0 /* RegistrationResult.swift */,
+				FEDFEFE224C8F96C004A3E0C /* Sex.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		FEC5473324B96A8E00AEBD9B = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +158,8 @@
 				FEC5475724B96A8F00AEBD9B /* KexTests */,
 				FEC5476224B96A8F00AEBD9B /* KexUITests */,
 				FEC5473D24B96A8E00AEBD9B /* Products */,
+				622D9983CF956063C917B464 /* Pods */,
+				CB6BCC9D562AC7AEC3439B5A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,12 +176,12 @@
 		FEC5473E24B96A8E00AEBD9B /* Kex */ = {
 			isa = PBXGroup;
 			children = (
+				FE798F7A24C8E70B0061B89C /* Model */,
 				FEC5477D24BAEFA100AEBD9B /* Controls */,
 				FEC5477B24BADC8B00AEBD9B /* Main */,
 				FEC5477624B9F6A500AEBD9B /* Authorization */,
 				FEC5477124B9739E00AEBD9B /* Registration */,
 				FEC5473F24B96A8E00AEBD9B /* AppDelegate.swift */,
-				FEC5477424B9F42F00AEBD9B /* MyFirstSegue.swift */,
 				FEC5474124B96A8E00AEBD9B /* SceneDelegate.swift */,
 				FEC5474324B96A8E00AEBD9B /* FirstViewController.swift */,
 				FEC5474524B96A8E00AEBD9B /* SecondViewController.swift */,
@@ -171,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				FEC5477E24BAEFB000AEBD9B /* UserActions.swift */,
+				FE178EE024C8DCD1002A01A8 /* KexApi.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -182,9 +250,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEC5476824B96A8F00AEBD9B /* Build configuration list for PBXNativeTarget "Kex" */;
 			buildPhases = (
+				09E68A892AFC80EBE9148F8A /* [CP] Check Pods Manifest.lock */,
 				FEC5473824B96A8E00AEBD9B /* Sources */,
 				FEC5473924B96A8E00AEBD9B /* Frameworks */,
 				FEC5473A24B96A8E00AEBD9B /* Resources */,
+				13389933B5AF149E90291868 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -199,6 +269,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEC5476B24B96A8F00AEBD9B /* Build configuration list for PBXNativeTarget "KexTests" */;
 			buildPhases = (
+				0CCFD2470274FC8A748573AA /* [CP] Check Pods Manifest.lock */,
 				FEC5475024B96A8F00AEBD9B /* Sources */,
 				FEC5475124B96A8F00AEBD9B /* Frameworks */,
 				FEC5475224B96A8F00AEBD9B /* Resources */,
@@ -217,9 +288,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEC5476E24B96A8F00AEBD9B /* Build configuration list for PBXNativeTarget "KexUITests" */;
 			buildPhases = (
+				E43955410CD7B8ED605FFC39 /* [CP] Check Pods Manifest.lock */,
 				FEC5475B24B96A8F00AEBD9B /* Sources */,
 				FEC5475C24B96A8F00AEBD9B /* Frameworks */,
 				FEC5475D24B96A8F00AEBD9B /* Resources */,
+				0EA0242D390E1A82F1F9A4F4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -301,16 +374,123 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		09E68A892AFC80EBE9148F8A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kex-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0CCFD2470274FC8A748573AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KexTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0EA0242D390E1A82F1F9A4F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kex-KexUITests/Pods-Kex-KexUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kex-KexUITests/Pods-Kex-KexUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kex-KexUITests/Pods-Kex-KexUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		13389933B5AF149E90291868 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kex/Pods-Kex-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kex/Pods-Kex-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kex/Pods-Kex-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E43955410CD7B8ED605FFC39 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kex-KexUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FEC5473824B96A8E00AEBD9B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE178EE124C8DCD1002A01A8 /* KexApi.swift in Sources */,
 				FEC5474624B96A8E00AEBD9B /* SecondViewController.swift in Sources */,
 				FEC5474424B96A8E00AEBD9B /* FirstViewController.swift in Sources */,
-				FEC5477524B9F42F00AEBD9B /* MyFirstSegue.swift in Sources */,
+				FEF8E1B624CF573E0010CFA0 /* RegistrationResult.swift in Sources */,
+				FE798F7D24C8E72B0061B89C /* LoginRequest.swift in Sources */,
 				FEC5474024B96A8E00AEBD9B /* AppDelegate.swift in Sources */,
 				FEC5477F24BAEFB000AEBD9B /* UserActions.swift in Sources */,
+				FEDFEFE124C8F33A004A3E0C /* RegistrationRequest.swift in Sources */,
+				FEDFEFE324C8F96C004A3E0C /* Sex.swift in Sources */,
 				FEC5474224B96A8E00AEBD9B /* SceneDelegate.swift in Sources */,
 				FEC5477824B9F6B900AEBD9B /* Authorization.swift in Sources */,
 				FEC5477324B973BE00AEBD9B /* RegistrationViewController.swift in Sources */,
@@ -484,6 +664,7 @@
 		};
 		FEC5476924B96A8F00AEBD9B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF1B26E97721241A6D6A1C93 /* Pods-Kex.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -502,6 +683,7 @@
 		};
 		FEC5476A24B96A8F00AEBD9B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32AC3FF16C40091DBFAD507E /* Pods-Kex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -520,6 +702,7 @@
 		};
 		FEC5476C24B96A8F00AEBD9B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39B4A47648C8051F0CEEE3DA /* Pods-KexTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -541,6 +724,7 @@
 		};
 		FEC5476D24B96A8F00AEBD9B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC204FD24ECD90B7C1D41D70 /* Pods-KexTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -562,6 +746,7 @@
 		};
 		FEC5476F24B96A8F00AEBD9B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 996E10FD571981C83FDF7AEA /* Pods-Kex-KexUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -581,6 +766,7 @@
 		};
 		FEC5477024B96A8F00AEBD9B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28EE4BB6F4E9CB5913AE482F /* Pods-Kex-KexUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

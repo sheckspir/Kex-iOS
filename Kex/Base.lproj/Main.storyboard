@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i0G-RT-B0U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i0G-RT-B0U">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -170,6 +170,13 @@
                                     <action selector="toAuthorizationClicked:" destination="pbb-jg-6en" eventType="touchUpInside" id="ZpN-hZ-qWM"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ошибка" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhs-QZ-pRK">
+                                <rect key="frame" x="20" y="268" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="jwj-3r-LXS"/>
@@ -177,16 +184,17 @@
                     <navigationItem key="navigationItem" id="Ux7-7s-jgd"/>
                     <connections>
                         <outlet property="emailTextField" destination="rzz-ON-Dod" id="mAU-f5-PFs"/>
+                        <outlet property="errorLabel" destination="Uhs-QZ-pRK" id="z0t-vU-WIm"/>
                         <outlet property="nameTextField" destination="gMM-gA-e0W" id="ds7-Nn-twx"/>
                         <outlet property="passwordTextField" destination="3Wc-dQ-o3W" id="Tb2-et-72p"/>
                         <outlet property="sexSegmentControl" destination="Hdk-5y-PiV" id="uML-NY-sV0"/>
                         <segue destination="pXe-qY-dzC" kind="show" identifier="toAuthorization" id="vCo-a5-6Xg"/>
-                        <segue destination="49e-Tb-3d3" kind="show" id="Ix8-9L-GW0"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="toMainScreen" id="Ix8-9L-GW0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRr-pl-pDu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1594" y="0.0"/>
+            <point key="canvasLocation" x="-1594.2028985507247" y="0.0"/>
         </scene>
         <!--Authentication Controller-->
         <scene sceneID="kfy-UU-ctH">
@@ -200,18 +208,21 @@
                                 <rect key="frame" x="20" y="832" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Войти"/>
+                                <connections>
+                                    <action selector="onLoginClicked:" destination="pXe-qY-dzC" eventType="touchUpInside" id="EP5-oJ-vX9"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="boV-5f-1aA">
-                                <rect key="frame" x="20" y="410" width="374" height="34"/>
+                                <rect key="frame" x="20" y="104" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя пользователя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yfn-ih-qNY">
-                                <rect key="frame" x="20" y="452" width="374" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yfn-ih-qNY">
+                                <rect key="frame" x="20" y="146" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9KB-Pp-VE3">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -222,16 +233,32 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ошибка" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il9-Y5-CYn">
+                                <rect key="frame" x="20" y="188" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="uGy-JW-qoX"/>
                     </view>
+                    <connections>
+                        <outlet property="emailEditText" destination="boV-5f-1aA" id="fLk-ze-53A"/>
+                        <outlet property="errorLabel" destination="Il9-Y5-CYn" id="hHM-iq-Buw"/>
+                        <outlet property="passwordTextField" destination="Yfn-ih-qNY" id="iKw-7a-wRY"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="toMainScreen" id="PTe-sc-8d5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQt-hi-Gwa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-772" y="724"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="PTe-sc-8d5"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
