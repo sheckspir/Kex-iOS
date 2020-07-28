@@ -25,20 +25,10 @@ extension KexApi: TargetType {
 
     var task: Task {
         switch self {
-        // а чё проще нельзя было?! todo автоматический перевод объекта в json
         case let .registration(registrationData):
-            return .requestParameters(parameters: [
-                "name": registrationData.name,
-                "email": registrationData.email,
-                "password": registrationData.password,
-                "login": registrationData.login,
-                "sex": Sex.M.rawValue,
-            ], encoding: JSONEncoding.default)
+            return .requestParameters(parameters: registrationData.toDict(), encoding: JSONEncoding.default)
         case let .login(loginData):
-            return .requestParameters(parameters: [
-                "username": loginData.username,
-                "password": loginData.password,
-            ], encoding: JSONEncoding.default)
+            return .requestParameters(parameters: loginData.toDict(), encoding: JSONEncoding.default)
         default:
             return .requestPlain
         }
@@ -62,5 +52,20 @@ extension KexApi: TargetType {
         case .registration:
             return "/registration"
         }
+    }
+
+    
+}
+
+extension Encodable {
+    func toDict() -> [String:String] {
+        let dataEncoded = try? JSONEncoder().encode(self)
+        if (dataEncoded != nil) {
+            let jsonData = try? JSONSerialization.jsonObject(with: dataEncoded!) as? [String: String]
+            if (jsonData != nil) {
+                return jsonData!
+            }
+        }
+        return [:]
     }
 }
