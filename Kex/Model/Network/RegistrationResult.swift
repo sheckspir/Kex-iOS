@@ -8,8 +8,7 @@
 
 import Foundation
 
-class RegistrationResult : Decodable{
-    
+class RegistrationResult: Decodable {
     var username: String = ""
     var access_token: String = ""
 }

@@ -9,13 +9,12 @@
 
 import Foundation
 
-class LoginRequest{
-    
+class LoginRequest {
     init(username: String, password: String) {
         self.username = username
         self.password = password
     }
-    
+
     var username: String
     var password: String
 }

@@ -7,11 +7,10 @@
 //
 
 import Foundation
-import UIKit
 import MessageUI
+import UIKit
 
 class UserActions {
-    
     static func writeToDeveloper() {
         let email = "sheckspir@list.ru"
         if let url = URL(string: "mailto:\(email)") {
@@ -22,16 +21,14 @@ class UserActions {
             }
         }
     }
-    
-    
+
     static func isEmailValid(email: String?) -> Bool {
-        if (email == nil) {
+        if email == nil {
             return false
         }
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
     }
-    
 }

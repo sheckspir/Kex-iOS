@@ -8,7 +8,7 @@
 
 import Foundation
 
-//string и codable чтобы в json превратить
+// string и codable чтобы в json превратить
 enum Sex: String, Codable {
     case F
     case M
