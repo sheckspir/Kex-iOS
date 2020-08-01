@@ -11,7 +11,9 @@
 		4804AC2CF2CFCC720FEAFE91 /* Pods_KexTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D2B47CD3773005DA15D35E /* Pods_KexTests.framework */; };
 		7966DA250E241A97D61A7ED9 /* Pods_Kex_KexUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E53CBCF964C066EF14B18CA /* Pods_Kex_KexUITests.framework */; };
 		FE178EE124C8DCD1002A01A8 /* KexApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE178EE024C8DCD1002A01A8 /* KexApi.swift */; };
+		FE4D557324D0C5E10037A9BE /* QuizGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D557224D0C5E10037A9BE /* QuizGroup.swift */; };
 		FE798F7D24C8E72B0061B89C /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE798F7C24C8E72B0061B89C /* LoginRequest.swift */; };
+		FEBCC6E624D6167D007CCC14 /* GroupViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBCC6E524D6167D007CCC14 /* GroupViewCell.swift */; };
 		FEC5474024B96A8E00AEBD9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5473F24B96A8E00AEBD9B /* AppDelegate.swift */; };
 		FEC5474224B96A8E00AEBD9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5474124B96A8E00AEBD9B /* SceneDelegate.swift */; };
 		FEC5474424B96A8E00AEBD9B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5474324B96A8E00AEBD9B /* FirstViewController.swift */; };
@@ -57,7 +59,9 @@
 		C5D2B47CD3773005DA15D35E /* Pods_KexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC204FD24ECD90B7C1D41D70 /* Pods-KexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KexTests.release.xcconfig"; path = "Target Support Files/Pods-KexTests/Pods-KexTests.release.xcconfig"; sourceTree = "<group>"; };
 		FE178EE024C8DCD1002A01A8 /* KexApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KexApi.swift; sourceTree = "<group>"; };
+		FE4D557224D0C5E10037A9BE /* QuizGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGroup.swift; sourceTree = "<group>"; };
 		FE798F7C24C8E72B0061B89C /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		FEBCC6E524D6167D007CCC14 /* GroupViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewCell.swift; sourceTree = "<group>"; };
 		FEC5473C24B96A8E00AEBD9B /* Kex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC5473F24B96A8E00AEBD9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC5474124B96A8E00AEBD9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,9 +136,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FE4D557424D0CA160037A9BE /* Questions */ = {
+			isa = PBXGroup;
+			children = (
+				FEC5474324B96A8E00AEBD9B /* FirstViewController.swift */,
+				FEBCC6E524D6167D007CCC14 /* GroupViewCell.swift */,
+			);
+			path = Questions;
+			sourceTree = "<group>";
+		};
 		FE798F7A24C8E70B0061B89C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FE4D557424D0CA160037A9BE /* Questions */,
 				FE798F7B24C8E7120061B89C /* Network */,
 			);
 			path = Model;
@@ -146,6 +160,7 @@
 				FE798F7C24C8E72B0061B89C /* LoginRequest.swift */,
 				FEDFEFE024C8F33A004A3E0C /* RegistrationRequest.swift */,
 				FEF8E1B524CF573E0010CFA0 /* RegistrationResult.swift */,
+				FE4D557224D0C5E10037A9BE /* QuizGroup.swift */,
 				FEDFEFE224C8F96C004A3E0C /* Sex.swift */,
 			);
 			path = Network;
@@ -183,7 +198,6 @@
 				FEC5477124B9739E00AEBD9B /* Registration */,
 				FEC5473F24B96A8E00AEBD9B /* AppDelegate.swift */,
 				FEC5474124B96A8E00AEBD9B /* SceneDelegate.swift */,
-				FEC5474324B96A8E00AEBD9B /* FirstViewController.swift */,
 				FEC5474524B96A8E00AEBD9B /* SecondViewController.swift */,
 				FEC5474724B96A8E00AEBD9B /* Main.storyboard */,
 				FEC5474A24B96A8F00AEBD9B /* Assets.xcassets */,
@@ -489,9 +503,11 @@
 				FE798F7D24C8E72B0061B89C /* LoginRequest.swift in Sources */,
 				FEC5474024B96A8E00AEBD9B /* AppDelegate.swift in Sources */,
 				FEC5477F24BAEFB000AEBD9B /* UserActions.swift in Sources */,
+				FEBCC6E624D6167D007CCC14 /* GroupViewCell.swift in Sources */,
 				FEDFEFE124C8F33A004A3E0C /* RegistrationRequest.swift in Sources */,
 				FEDFEFE324C8F96C004A3E0C /* Sex.swift in Sources */,
 				FEC5474224B96A8E00AEBD9B /* SceneDelegate.swift in Sources */,
+				FE4D557324D0C5E10037A9BE /* QuizGroup.swift in Sources */,
 				FEC5477824B9F6B900AEBD9B /* Authorization.swift in Sources */,
 				FEC5477324B973BE00AEBD9B /* RegistrationViewController.swift in Sources */,
 			);

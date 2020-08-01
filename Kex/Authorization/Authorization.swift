@@ -30,9 +30,7 @@ class Authorization: UIViewController {
             return
         }
 
-        let logger = NetworkLoggerPlugin()
-        logger.configuration.logOptions = .verbose
-        let provider = MoyaProvider<KexApi>(plugins: [logger])
+        let provider = MoyaProvider<KexApi>()
 
         let loginData = LoginRequest(username: email!, password: password!)
 

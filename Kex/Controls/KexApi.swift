@@ -11,12 +11,17 @@ import Moya
 enum KexApi {
     case login(loginRequest: LoginRequest)
     case registration(registrationData: RegistrationRequest)
+    case allGroups
 }
 
 extension KexApi: TargetType {
     var method: Moya.Method {
-//        todo здесь добавить различные методы для пост, гет, пут и делете
-        return .post
+        switch self {
+        case .registration, .login:
+            return .post
+        default:
+            return .get
+        }
     }
 
     var sampleData: Data {
@@ -51,18 +56,18 @@ extension KexApi: TargetType {
             return "/login"
         case .registration:
             return "/registration"
+        case .allGroups:
+            return "/groups"
         }
     }
-
-    
 }
 
 extension Encodable {
-    func toDict() -> [String:String] {
+    func toDict() -> [String: String] {
         let dataEncoded = try? JSONEncoder().encode(self)
-        if (dataEncoded != nil) {
+        if dataEncoded != nil {
             let jsonData = try? JSONSerialization.jsonObject(with: dataEncoded!) as? [String: String]
-            if (jsonData != nil) {
+            if jsonData != nil {
                 return jsonData!
             }
         }

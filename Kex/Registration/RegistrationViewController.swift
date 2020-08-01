@@ -60,7 +60,7 @@ class RegistrationViewController: UIViewController {
 
         let data = RegistrationRequest(name: name!, email: email!, password: password!, login: email!, sex: sex!)
 
-        let disposable = provider.rx.request(.registration(registrationData: data))
+        _ = provider.rx.request(.registration(registrationData: data))
             .map(RegistrationResult.self)
             .do(onSuccess: { result in
                 UserDefaults.standard.set(result.access_token, forKey: "token")
