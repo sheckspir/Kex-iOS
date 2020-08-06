@@ -9,30 +9,54 @@
 import UIKit
 import Moya
 import RxSwift
+import Kingfisher
 
-class FirstViewController: UIViewController, UICollectionViewDataSource {
+class FirstViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var firstLoadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var groupsCollectionView: UICollectionView!
     
     var groups : [QuizGroup] = []
     var cellID = "GroupCell"
+    var countInRow = 3
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return groups.count
     }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
         
         let groupCell = (cell as! GroupViewCell)
         let group = groups[indexPath.item]
-//        groupCell.nameQuestionLabelView.text = group.name
-//        groupCell.nameQuestionLabelView.setNeedsDisplay()
-//        print("Name view: \(groupCell.nameQuestionLabelView.description)")
-//        groupCell.textCountQuestionsLabelView.text = "\(group.answered)/\(group.count)"
+        groupCell.nameQuestionLabelView.text = group.name
+        groupCell.nameQuestionLabelView.setNeedsDisplay()
+        groupCell.textCountQuestionsLabelView.text = "\(group.answered)/\(group.count)"
 
-        print(group.name)
+        let url = URL(string: group.imageUrl)
+        
+        
+        
+        
+        groupCell.groupImageView.kf.setImage(with: url,
+                                             options: [
+                                                .scaleFactor(groupCell.groupImageView.contentScaleFactor*2)])
+
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let flowLayout = (collectionViewLayout as! UICollectionViewFlowLayout)
+        
+        
+        
+        let totalSpace = flowLayout.sectionInset.left + flowLayout.sectionInset.right + (flowLayout.minimumInteritemSpacing * CGFloat(countInRow - 1))
+        
+        let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(countInRow))
+        
+        return CGSize(width: size, height: size)
     }
     
     override func viewDidLoad() {
@@ -42,11 +66,15 @@ class FirstViewController: UIViewController, UICollectionViewDataSource {
         logger.configuration.logOptions = .verbose
         let provider = MoyaProvider<KexApi>(plugins: [logger])
         
+        firstLoadingIndicator.startAnimating()
+        
         _ = provider.rx.request(.allGroups)
             .map([QuizGroup].self)
             .do(onSuccess: { result in
+                self.firstLoadingIndicator.stopAnimating()
                 self.showGroups(groups: result)
             }, onError: { error in
+                self.firstLoadingIndicator.stopAnimating()
 //                self.errorLabel.isHidden = false
 //                self.errorLabel.setNeedsDisplay()
 //                self.errorLabel.text = "Ошибка " + error.localizedDescription

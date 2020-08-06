@@ -148,7 +148,6 @@
 		FE798F7A24C8E70B0061B89C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FE4D557424D0CA160037A9BE /* Questions */,
 				FE798F7B24C8E7120061B89C /* Network */,
 			);
 			path = Model;
@@ -244,6 +243,7 @@
 		FEC5477B24BADC8B00AEBD9B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FE4D557424D0CA160037A9BE /* Questions */,
 			);
 			path = Main;
 			sourceTree = "<group>";

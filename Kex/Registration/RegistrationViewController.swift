@@ -16,8 +16,13 @@ class RegistrationViewController: UIViewController {
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var sexSegmentControl: UISegmentedControl!
     @IBOutlet var errorLabel: UILabel!
+    @IBOutlet var registrationIndicator: UIActivityIndicatorView!
+    @IBOutlet var registrationButton: UIButton!
+
+    var registrationRequest: Disposable?
 
     @IBAction func toAuthorizationClicked(_ sender: Any) {
+        disposeRegistration(dispose: true)
         performSegue(withIdentifier: "toAuthorization", sender: nil)
     }
 
@@ -60,21 +65,46 @@ class RegistrationViewController: UIViewController {
 
         let data = RegistrationRequest(name: name!, email: email!, password: password!, login: email!, sex: sex!)
 
-        _ = provider.rx.request(.registration(registrationData: data))
+        registrationRequest = provider.rx.request(.registration(registrationData: data))
             .map(RegistrationResult.self)
             .do(onSuccess: { result in
                 UserDefaults.standard.set(result.access_token, forKey: "token")
                 UserDefaults.standard.set(result.username, forKey: "login")
+                self.disposeRegistration(dispose: false)
                 self.performSegue(withIdentifier: "toMainScreen", sender: nil)
             }, onError: { error in
+                self.disposeRegistration(dispose: false)
                 self.errorLabel.isHidden = false
                 self.errorLabel.setNeedsDisplay()
                 self.errorLabel.text = "Ошибка " + error.localizedDescription
             }, onSubscribe: {
+                self.registrationButton.isEnabled = false
                 self.errorLabel.isHidden = true
+               
+                self.registrationIndicator.startAnimating()
+                self.registrationButton.isEnabled = false
+                self.emailTextField.isEnabled = false
+                self.passwordTextField.isEnabled = false
+                self.nameTextField.isEnabled = false
+                self.sexSegmentControl.isEnabled = false
                 print("onSubscribe")
             })
             .subscribe()
+    }
+
+    private func disposeRegistration(dispose: Bool) {
+        if registrationRequest != nil {
+            if dispose {
+                registrationRequest?.dispose()
+            }
+            registrationRequest = nil
+            registrationButton.isEnabled = true
+            registrationIndicator.stopAnimating()
+            emailTextField.isEnabled = true
+            passwordTextField.isEnabled = true
+            nameTextField.isEnabled = true
+            sexSegmentControl.isEnabled = true
+        }
     }
 
     @IBAction func writeToDeveloper(_ sender: Any) {
