@@ -10,6 +10,9 @@
 		1B68CAF8CF7C539F62BEBBD8 /* Pods_Kex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9984B561977F90CCA2BA2353 /* Pods_Kex.framework */; };
 		4804AC2CF2CFCC720FEAFE91 /* Pods_KexTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D2B47CD3773005DA15D35E /* Pods_KexTests.framework */; };
 		7966DA250E241A97D61A7ED9 /* Pods_Kex_KexUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E53CBCF964C066EF14B18CA /* Pods_Kex_KexUITests.framework */; };
+		FE0DDD9324DCE2930036189A /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0DDD9224DCE2930036189A /* QuizViewController.swift */; };
+		FE0DDD9524DCE9540036189A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0DDD9424DCE9540036189A /* Question.swift */; };
+		FE0DDD9724DCE9CC0036189A /* QuizType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0DDD9624DCE9CC0036189A /* QuizType.swift */; };
 		FE178EE124C8DCD1002A01A8 /* KexApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE178EE024C8DCD1002A01A8 /* KexApi.swift */; };
 		FE4D557324D0C5E10037A9BE /* QuizGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D557224D0C5E10037A9BE /* QuizGroup.swift */; };
 		FE798F7D24C8E72B0061B89C /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE798F7C24C8E72B0061B89C /* LoginRequest.swift */; };
@@ -26,6 +29,9 @@
 		FEC5477324B973BE00AEBD9B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5477224B973BE00AEBD9B /* RegistrationViewController.swift */; };
 		FEC5477824B9F6B900AEBD9B /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5477724B9F6B900AEBD9B /* Authorization.swift */; };
 		FEC5477F24BAEFB000AEBD9B /* UserActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5477E24BAEFB000AEBD9B /* UserActions.swift */; };
+		FED2449E24E06AAD00B2B670 /* QuestionRegularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2449D24E06AAD00B2B670 /* QuestionRegularCell.swift */; };
+		FED244A024E06ACA00B2B670 /* QuestionYouMeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2449F24E06ACA00B2B670 /* QuestionYouMeCell.swift */; };
+		FED244A224E07EE500B2B670 /* CenterCropImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED244A124E07EE500B2B670 /* CenterCropImageProcessor.swift */; };
 		FEDFEFE124C8F33A004A3E0C /* RegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDFEFE024C8F33A004A3E0C /* RegistrationRequest.swift */; };
 		FEDFEFE324C8F96C004A3E0C /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDFEFE224C8F96C004A3E0C /* Sex.swift */; };
 		FEF8E1B624CF573E0010CFA0 /* RegistrationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF8E1B524CF573E0010CFA0 /* RegistrationResult.swift */; };
@@ -58,6 +64,9 @@
 		BF1B26E97721241A6D6A1C93 /* Pods-Kex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kex.debug.xcconfig"; path = "Target Support Files/Pods-Kex/Pods-Kex.debug.xcconfig"; sourceTree = "<group>"; };
 		C5D2B47CD3773005DA15D35E /* Pods_KexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC204FD24ECD90B7C1D41D70 /* Pods-KexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KexTests.release.xcconfig"; path = "Target Support Files/Pods-KexTests/Pods-KexTests.release.xcconfig"; sourceTree = "<group>"; };
+		FE0DDD9224DCE2930036189A /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		FE0DDD9424DCE9540036189A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		FE0DDD9624DCE9CC0036189A /* QuizType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizType.swift; sourceTree = "<group>"; };
 		FE178EE024C8DCD1002A01A8 /* KexApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KexApi.swift; sourceTree = "<group>"; };
 		FE4D557224D0C5E10037A9BE /* QuizGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGroup.swift; sourceTree = "<group>"; };
 		FE798F7C24C8E72B0061B89C /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
@@ -80,6 +89,9 @@
 		FEC5477224B973BE00AEBD9B /* RegistrationViewController.swift */ = {isa = PBXFileReference; indentWidth = 3; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		FEC5477724B9F6B900AEBD9B /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		FEC5477E24BAEFB000AEBD9B /* UserActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActions.swift; sourceTree = "<group>"; };
+		FED2449D24E06AAD00B2B670 /* QuestionRegularCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRegularCell.swift; sourceTree = "<group>"; };
+		FED2449F24E06ACA00B2B670 /* QuestionYouMeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionYouMeCell.swift; sourceTree = "<group>"; };
+		FED244A124E07EE500B2B670 /* CenterCropImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterCropImageProcessor.swift; sourceTree = "<group>"; };
 		FEDFEFE024C8F33A004A3E0C /* RegistrationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRequest.swift; sourceTree = "<group>"; };
 		FEDFEFE224C8F96C004A3E0C /* Sex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sex.swift; sourceTree = "<group>"; };
 		FEF8E1B524CF573E0010CFA0 /* RegistrationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResult.swift; sourceTree = "<group>"; };
@@ -136,9 +148,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FE0DDD9124DCE2530036189A /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				FE0DDD9224DCE2930036189A /* QuizViewController.swift */,
+				FED2449D24E06AAD00B2B670 /* QuestionRegularCell.swift */,
+				FED2449F24E06ACA00B2B670 /* QuestionYouMeCell.swift */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
 		FE4D557424D0CA160037A9BE /* Questions */ = {
 			isa = PBXGroup;
 			children = (
+				FE0DDD9124DCE2530036189A /* Question */,
 				FEC5474324B96A8E00AEBD9B /* FirstViewController.swift */,
 				FEBCC6E524D6167D007CCC14 /* GroupViewCell.swift */,
 			);
@@ -161,6 +184,8 @@
 				FEF8E1B524CF573E0010CFA0 /* RegistrationResult.swift */,
 				FE4D557224D0C5E10037A9BE /* QuizGroup.swift */,
 				FEDFEFE224C8F96C004A3E0C /* Sex.swift */,
+				FE0DDD9624DCE9CC0036189A /* QuizType.swift */,
+				FE0DDD9424DCE9540036189A /* Question.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -253,6 +278,7 @@
 			children = (
 				FEC5477E24BAEFB000AEBD9B /* UserActions.swift */,
 				FE178EE024C8DCD1002A01A8 /* KexApi.swift */,
+				FED244A124E07EE500B2B670 /* CenterCropImageProcessor.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -496,16 +522,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FED2449E24E06AAD00B2B670 /* QuestionRegularCell.swift in Sources */,
+				FED244A224E07EE500B2B670 /* CenterCropImageProcessor.swift in Sources */,
+				FE0DDD9724DCE9CC0036189A /* QuizType.swift in Sources */,
 				FE178EE124C8DCD1002A01A8 /* KexApi.swift in Sources */,
+				FE0DDD9524DCE9540036189A /* Question.swift in Sources */,
 				FEC5474624B96A8E00AEBD9B /* SecondViewController.swift in Sources */,
 				FEC5474424B96A8E00AEBD9B /* FirstViewController.swift in Sources */,
 				FEF8E1B624CF573E0010CFA0 /* RegistrationResult.swift in Sources */,
 				FE798F7D24C8E72B0061B89C /* LoginRequest.swift in Sources */,
 				FEC5474024B96A8E00AEBD9B /* AppDelegate.swift in Sources */,
+				FE0DDD9324DCE2930036189A /* QuizViewController.swift in Sources */,
 				FEC5477F24BAEFB000AEBD9B /* UserActions.swift in Sources */,
 				FEBCC6E624D6167D007CCC14 /* GroupViewCell.swift in Sources */,
 				FEDFEFE124C8F33A004A3E0C /* RegistrationRequest.swift in Sources */,
 				FEDFEFE324C8F96C004A3E0C /* Sex.swift in Sources */,
+				FED244A024E06ACA00B2B670 /* QuestionYouMeCell.swift in Sources */,
 				FEC5474224B96A8E00AEBD9B /* SceneDelegate.swift in Sources */,
 				FE4D557324D0C5E10037A9BE /* QuizGroup.swift in Sources */,
 				FEC5477824B9F6B900AEBD9B /* Authorization.swift in Sources */,

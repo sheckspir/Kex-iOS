@@ -23,8 +23,16 @@ class FirstViewController: UIViewController, UICollectionViewDataSource, UIColle
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return groups.count
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.destination is QuizViewController && sender is Int) {
+            (segue.destination as! QuizViewController).groupId = sender as! Int
+        }
+    }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let group = groups[indexPath.item]
+        performSegue(withIdentifier: "fromGroupToQuiz", sender: group.id)
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
@@ -62,9 +70,7 @@ class FirstViewController: UIViewController, UICollectionViewDataSource, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let logger = NetworkLoggerPlugin()
-        logger.configuration.logOptions = .verbose
-        let provider = MoyaProvider<KexApi>(plugins: [logger])
+        let provider = MoyaProvider<KexApi>()
         
         firstLoadingIndicator.startAnimating()
         

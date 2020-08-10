@@ -12,6 +12,8 @@ enum KexApi {
     case login(loginRequest: LoginRequest)
     case registration(registrationData: RegistrationRequest)
     case allGroups
+    case groupQuestions(groupId : Int)
+    case getQuizQuestions(groupId : Int)
 }
 
 extension KexApi: TargetType {
@@ -34,6 +36,10 @@ extension KexApi: TargetType {
             return .requestParameters(parameters: registrationData.toDict(), encoding: JSONEncoding.default)
         case let .login(loginData):
             return .requestParameters(parameters: loginData.toDict(), encoding: JSONEncoding.default)
+        case let .groupQuestions(groupId):
+            return .requestParameters(parameters: ["groupId" : groupId], encoding: URLEncoding.default)
+        case let .getQuizQuestions(groupId):
+            return .requestParameters(parameters: ["groupId": groupId], encoding: URLEncoding.default)
         default:
             return .requestPlain
         }
@@ -58,6 +64,10 @@ extension KexApi: TargetType {
             return "/registration"
         case .allGroups:
             return "/groups"
+        case .groupQuestions:
+            return "/groups/byId"
+        case .getQuizQuestions:
+            return "/questions"
         }
     }
 }
