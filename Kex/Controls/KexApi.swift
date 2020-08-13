@@ -14,6 +14,7 @@ enum KexApi {
     case allGroups
     case groupQuestions(groupId : Int)
     case getQuizQuestions(groupId : Int)
+    case sendAnswer(answer : QuestionSavingAnswer)
 }
 
 extension KexApi: TargetType {
@@ -21,6 +22,8 @@ extension KexApi: TargetType {
         switch self {
         case .registration, .login:
             return .post
+        case .sendAnswer:
+            return .put
         default:
             return .get
         }
@@ -40,6 +43,8 @@ extension KexApi: TargetType {
             return .requestParameters(parameters: ["groupId" : groupId], encoding: URLEncoding.default)
         case let .getQuizQuestions(groupId):
             return .requestParameters(parameters: ["groupId": groupId], encoding: URLEncoding.default)
+        case let .sendAnswer(answer):
+            return .requestParameters(parameters: answer.toDict(), encoding: JSONEncoding.default)
         default:
             return .requestPlain
         }
@@ -68,15 +73,18 @@ extension KexApi: TargetType {
             return "/groups/byId"
         case .getQuizQuestions:
             return "/questions"
+        case .sendAnswer:
+            return "/questions/answer"
         }
+        
     }
 }
 
 extension Encodable {
-    func toDict() -> [String: String] {
+    func toDict() -> [String: Any] {
         let dataEncoded = try? JSONEncoder().encode(self)
         if dataEncoded != nil {
-            let jsonData = try? JSONSerialization.jsonObject(with: dataEncoded!) as? [String: String]
+            let jsonData = try? JSONSerialization.jsonObject(with: dataEncoded!) as? [String: Any]
             if jsonData != nil {
                 return jsonData!
             }

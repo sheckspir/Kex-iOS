@@ -29,6 +29,9 @@
 		FEC5477324B973BE00AEBD9B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5477224B973BE00AEBD9B /* RegistrationViewController.swift */; };
 		FEC5477824B9F6B900AEBD9B /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5477724B9F6B900AEBD9B /* Authorization.swift */; };
 		FEC5477F24BAEFB000AEBD9B /* UserActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5477E24BAEFB000AEBD9B /* UserActions.swift */; };
+		FEC5BC8924E3864D00ADABF1 /* AnswerSaverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5BC8824E3864C00ADABF1 /* AnswerSaverController.swift */; };
+		FEC5BC8B24E386C500ADABF1 /* QuestionAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5BC8A24E386C500ADABF1 /* QuestionAnswer.swift */; };
+		FEC5BC8D24E3885A00ADABF1 /* QuestionSavingAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5BC8C24E3885A00ADABF1 /* QuestionSavingAnswer.swift */; };
 		FED2449E24E06AAD00B2B670 /* QuestionRegularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2449D24E06AAD00B2B670 /* QuestionRegularCell.swift */; };
 		FED244A024E06ACA00B2B670 /* QuestionYouMeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2449F24E06ACA00B2B670 /* QuestionYouMeCell.swift */; };
 		FED244A224E07EE500B2B670 /* CenterCropImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED244A124E07EE500B2B670 /* CenterCropImageProcessor.swift */; };
@@ -89,6 +92,9 @@
 		FEC5477224B973BE00AEBD9B /* RegistrationViewController.swift */ = {isa = PBXFileReference; indentWidth = 3; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		FEC5477724B9F6B900AEBD9B /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		FEC5477E24BAEFB000AEBD9B /* UserActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActions.swift; sourceTree = "<group>"; };
+		FEC5BC8824E3864C00ADABF1 /* AnswerSaverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerSaverController.swift; sourceTree = "<group>"; };
+		FEC5BC8A24E386C500ADABF1 /* QuestionAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswer.swift; sourceTree = "<group>"; };
+		FEC5BC8C24E3885A00ADABF1 /* QuestionSavingAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSavingAnswer.swift; sourceTree = "<group>"; };
 		FED2449D24E06AAD00B2B670 /* QuestionRegularCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRegularCell.swift; sourceTree = "<group>"; };
 		FED2449F24E06ACA00B2B670 /* QuestionYouMeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionYouMeCell.swift; sourceTree = "<group>"; };
 		FED244A124E07EE500B2B670 /* CenterCropImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterCropImageProcessor.swift; sourceTree = "<group>"; };
@@ -154,6 +160,7 @@
 				FE0DDD9224DCE2930036189A /* QuizViewController.swift */,
 				FED2449D24E06AAD00B2B670 /* QuestionRegularCell.swift */,
 				FED2449F24E06ACA00B2B670 /* QuestionYouMeCell.swift */,
+				FEC5BC8824E3864C00ADABF1 /* AnswerSaverController.swift */,
 			);
 			path = Question;
 			sourceTree = "<group>";
@@ -184,6 +191,8 @@
 				FEF8E1B524CF573E0010CFA0 /* RegistrationResult.swift */,
 				FE4D557224D0C5E10037A9BE /* QuizGroup.swift */,
 				FEDFEFE224C8F96C004A3E0C /* Sex.swift */,
+				FEC5BC8C24E3885A00ADABF1 /* QuestionSavingAnswer.swift */,
+				FEC5BC8A24E386C500ADABF1 /* QuestionAnswer.swift */,
 				FE0DDD9624DCE9CC0036189A /* QuizType.swift */,
 				FE0DDD9424DCE9540036189A /* Question.swift */,
 			);
@@ -526,7 +535,9 @@
 				FED244A224E07EE500B2B670 /* CenterCropImageProcessor.swift in Sources */,
 				FE0DDD9724DCE9CC0036189A /* QuizType.swift in Sources */,
 				FE178EE124C8DCD1002A01A8 /* KexApi.swift in Sources */,
+				FEC5BC8924E3864D00ADABF1 /* AnswerSaverController.swift in Sources */,
 				FE0DDD9524DCE9540036189A /* Question.swift in Sources */,
+				FEC5BC8D24E3885A00ADABF1 /* QuestionSavingAnswer.swift in Sources */,
 				FEC5474624B96A8E00AEBD9B /* SecondViewController.swift in Sources */,
 				FEC5474424B96A8E00AEBD9B /* FirstViewController.swift in Sources */,
 				FEF8E1B624CF573E0010CFA0 /* RegistrationResult.swift in Sources */,
@@ -534,6 +545,7 @@
 				FEC5474024B96A8E00AEBD9B /* AppDelegate.swift in Sources */,
 				FE0DDD9324DCE2930036189A /* QuizViewController.swift in Sources */,
 				FEC5477F24BAEFB000AEBD9B /* UserActions.swift in Sources */,
+				FEC5BC8B24E386C500ADABF1 /* QuestionAnswer.swift in Sources */,
 				FEBCC6E624D6167D007CCC14 /* GroupViewCell.swift in Sources */,
 				FEDFEFE124C8F33A004A3E0C /* RegistrationRequest.swift in Sources */,
 				FEDFEFE324C8F96C004A3E0C /* Sex.swift in Sources */,

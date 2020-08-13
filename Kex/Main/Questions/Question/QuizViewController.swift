@@ -10,12 +10,16 @@ import UIKit
 import Moya
 import RxSwift
 
-class QuizViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class QuizViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, QuestionYouMeListener, QuestionRegularListener {
     
-    var groupId = 0
+    var groupId = -1
+    var answered = 0
+    var lastScrolleded = 0
     
     private let questionReqular = "QuestionRegular"
     private let questionYouAndMe = "QuestionYouMe"
+    
+    private let answerSaver = AnswerSaverController()
     
     private var questions : [Question] = []
     
@@ -43,6 +47,21 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if let layout = quizCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            let itemWidth = view.bounds.width
+//            todo изменить определениее высоты
+//            let itemHeight = view.bounds.height
+            let itemHeight = CGFloat(774)
+            layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
+            layout.estimatedItemSize = layout.itemSize
+            layout.invalidateLayout()
+        }
+    
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.questions.count
     }
@@ -61,7 +80,7 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
     private func showStandartQuestion(question: Question, collectionView: UICollectionView, indexPath : IndexPath) -> UICollectionViewCell {
         let questionCell = collectionView.dequeueReusableCell(withReuseIdentifier: questionReqular, for: indexPath) as! QuestionRegularCell
         questionCell.layoutIfNeeded()
-        questionCell.showQuestion(question: question)
+        questionCell.showQuestion(question: question, listener: self)
         
         return questionCell
     }
@@ -69,46 +88,62 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
     private func showYouMeQuestion(question: Question, collectionView: UICollectionView, indexPath : IndexPath) -> UICollectionViewCell {
         let questionCell = collectionView.dequeueReusableCell(withReuseIdentifier: questionYouAndMe, for: indexPath) as! QuestionYouMeCell
         questionCell.layoutIfNeeded()
-        questionCell.showQuestion(question: question)
+        questionCell.showQuestion(question: question, listener: self)
         
         return questionCell
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        print("viewDidLayoutSubviews")
-        
-        if let layout = quizCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            print("width \(view.bounds.width) height = \(view.bounds.height)")
-            let itemWidth = view.bounds.width
-//            let itemHeight = view.bounds.height
-            let itemHeight = CGFloat(774)
-            layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
-            layout.estimatedItemSize = layout.itemSize
-            layout.invalidateLayout()
+    func wantClicked(id: Int) {
+        answerSaver.saveAnswer(groupId: groupId, questionId: id, answer: QuestionAnswer.LIKE)
+        scrollToNextIfPossible()
+    }
+    
+    func wantDoClicked(id: Int) {
+        answerSaver.saveAnswer(groupId: groupId, questionId: id, answer: QuestionAnswer.LIKE_I_DO)
+        scrollToNextIfPossible()
+    }
+    
+    func wantBothClicked(id: Int) {
+        answerSaver.saveAnswer(groupId: groupId, questionId: id, answer: QuestionAnswer.LIKE)
+        scrollToNextIfPossible()
+    }
+    
+    func wantGetClicked(id: Int) {
+        answerSaver.saveAnswer(groupId: groupId, questionId: id, answer: QuestionAnswer.LIKE_I_GET)
+        scrollToNextIfPossible()
+    }
+    
+    func thinkClicked(id: Int) {
+        answerSaver.saveAnswer(groupId: groupId, questionId: id, answer: QuestionAnswer.DISCUSS)
+        scrollToNextIfPossible()
+    }
+    
+    func noClicked(id: Int) {
+        answerSaver.saveAnswer(groupId: groupId, questionId: id, answer: QuestionAnswer.DONT_LIKE)
+        scrollToNextIfPossible()
+    }
+    
+    private func scrollToNextIfPossible() {
+        if (questions.count - 1 <= lastScrolleded) {
+//            todo завершить тест
+        } else {
+            scrollToPosition(position: lastScrolleded + 1, animated: true)
         }
     }
     
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-////        return CGSize(width: 300, height: 400)
-//        print("collection view create size")
-//        return CGSize(width: (view.frame.size.width), height: (view.frame.size.height))
-//    }
+    private func scrollToPosition(position : Int, animated: Bool) {
+        lastScrolleded = position
+        quizCollectionView.scrollToItem(at: IndexPath(item: position, section: 0), at: [.centeredHorizontally], animated: animated)
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-////        return view.frame.size
-//        return CGSize(width: 500, height: 500)
-//    }
-//
     private func showQuiz(questions: [Question]) {
         self.questions = questions
         quizCollectionView.reloadData()
+        scrollToPosition(position: answered, animated: false)
     }
     
     private func startAnimating() {

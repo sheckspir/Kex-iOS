@@ -119,7 +119,7 @@
                                 <rect key="frame" x="-20" y="68" width="454" height="814"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pms-eD-BPf">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pms-eD-BPf">
                                         <rect key="frame" x="20" y="0.0" width="414" height="814"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -159,14 +159,23 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0D-0i-hhV">
                                                             <rect key="frame" x="109" y="155" width="132" height="30"/>
                                                             <state key="normal" title="Хочу попробовать"/>
+                                                            <connections>
+                                                                <action selector="wantClicked:" destination="eHi-eg-P0j" eventType="touchUpInside" id="ifh-v4-Y9N"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmQ-vF-clw">
                                                             <rect key="frame" x="114.66666666666669" y="193" width="121" height="30"/>
                                                             <state key="normal" title="Можно обсудить"/>
+                                                            <connections>
+                                                                <action selector="thinkClicked:" destination="eHi-eg-P0j" eventType="touchUpInside" id="Bq4-3A-fr9"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iO6-bL-Htn">
                                                             <rect key="frame" x="149" y="231" width="52" height="30"/>
                                                             <state key="normal" title="Не моё"/>
+                                                            <connections>
+                                                                <action selector="noClicked:" destination="eHi-eg-P0j" eventType="touchUpInside" id="dxC-CJ-ZVo"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </view>
@@ -188,9 +197,6 @@
                                                     <constraint firstAttribute="trailing" secondItem="hfb-XS-2LC" secondAttribute="trailing" id="yYE-CO-sFl"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outlet property="buttonNo" destination="iO6-bL-Htn" id="Gws-X3-YZ1"/>
-                                                    <outlet property="buttonThink" destination="fmQ-vF-clw" id="tzx-3y-iBW"/>
-                                                    <outlet property="buttonWant" destination="K0D-0i-hhV" id="vz4-OA-TPi"/>
                                                     <outlet property="image" destination="hfb-XS-2LC" id="cIk-ac-AtV"/>
                                                     <outlet property="nameLabel" destination="FzE-hx-WZW" id="yta-Rt-ZBx"/>
                                                     <outlet property="questionLabel" destination="BPU-Lx-VoM" id="LB2-El-0Tb"/>
@@ -212,22 +218,6 @@
                                                             <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WRq-PN-xaj">
-                                                            <rect key="frame" x="238.66666666666663" y="155" width="111" height="30"/>
-                                                            <state key="normal" title="Хочу сделать"/>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="djh-qL-FDf">
-                                                            <rect key="frame" x="119.66666666666669" y="155" width="111" height="30"/>
-                                                            <state key="normal" title="Хочу для обоих"/>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xm7-j7-VuD">
-                                                            <rect key="frame" x="114.66666666666669" y="193" width="121" height="30"/>
-                                                            <state key="normal" title="Можно обсудить"/>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHU-Sj-nQt">
-                                                            <rect key="frame" x="149" y="231" width="52" height="30"/>
-                                                            <state key="normal" title="Не моё"/>
-                                                        </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ny-sv-n7V">
                                                             <rect key="frame" x="75" y="123.66666666666667" width="200" height="19.333333333333329"/>
                                                             <constraints>
@@ -237,9 +227,40 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WRq-PN-xaj">
+                                                            <rect key="frame" x="238.66666666666663" y="155" width="111" height="30"/>
+                                                            <state key="normal" title="Хочу сделать"/>
+                                                            <connections>
+                                                                <action selector="wantDoClicked:" destination="TZY-De-vtK" eventType="touchUpInside" id="hT1-VX-uBZ"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="djh-qL-FDf">
+                                                            <rect key="frame" x="119.66666666666669" y="155" width="111" height="30"/>
+                                                            <state key="normal" title="Хочу для обоих"/>
+                                                            <connections>
+                                                                <action selector="wanttBothClicked:" destination="TZY-De-vtK" eventType="touchUpInside" id="odN-XW-18M"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xm7-j7-VuD">
+                                                            <rect key="frame" x="114.66666666666669" y="193" width="121" height="30"/>
+                                                            <state key="normal" title="Можно обсудить"/>
+                                                            <connections>
+                                                                <action selector="thinkClicked:" destination="TZY-De-vtK" eventType="touchUpInside" id="DAf-l7-NY7"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHU-Sj-nQt">
+                                                            <rect key="frame" x="149" y="231" width="52" height="30"/>
+                                                            <state key="normal" title="Не моё"/>
+                                                            <connections>
+                                                                <action selector="noClicked:" destination="TZY-De-vtK" eventType="touchUpInside" id="qQh-b2-Mtt"/>
+                                                            </connections>
+                                                        </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nSU-O2-7xi">
                                                             <rect key="frame" x="0.6666666666666643" y="155" width="111" height="30"/>
                                                             <state key="normal" title="Хочу получить"/>
+                                                            <connections>
+                                                                <action selector="wantGetClicked:" destination="TZY-De-vtK" eventType="touchUpInside" id="WoC-0A-QhB"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </view>
@@ -270,12 +291,7 @@
                                                 <connections>
                                                     <outlet property="image" destination="bbo-vq-5Fc" id="deH-gw-gzr"/>
                                                     <outlet property="nameLabel" destination="MnH-Cf-yCl" id="71P-ie-2dk"/>
-                                                    <outlet property="noButton" destination="mHU-Sj-nQt" id="sOZ-Ur-Pcm"/>
                                                     <outlet property="questionLabel" destination="8Ny-sv-n7V" id="63F-CC-yNj"/>
-                                                    <outlet property="thinkButton" destination="Xm7-j7-VuD" id="AXj-I2-4lt"/>
-                                                    <outlet property="wantBothButton" destination="djh-qL-FDf" id="3d1-lB-jFG"/>
-                                                    <outlet property="wantDoButton" destination="WRq-PN-xaj" id="j1e-5X-LhD"/>
-                                                    <outlet property="wantGetButton" destination="nSU-O2-7xi" id="496-xx-960"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>

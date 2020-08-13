@@ -12,17 +12,16 @@ import Kingfisher
 class QuestionRegularCell: UICollectionViewCell {
     
     var questionIndex = -1
+    var questionListener : QuestionRegularListener? = nil
     
     @IBOutlet private weak var image: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var questionLabel: UILabel!
     
-    @IBOutlet private weak var buttonWant: UIButton!
-    @IBOutlet private weak var buttonThink: UIButton!
-    @IBOutlet private weak var buttonNo: UIButton!
-    
-    func showQuestion(question : Question) {
+    func showQuestion(question : Question, listener: QuestionRegularListener) {
         let imageProcessor = MyCroppingImageProcessor(size: image.frame.size)
+        questionIndex = question.id
+        questionListener = listener
         if (question.image != nil) {
             print(question.image!)
             let url = URL(string: question.image!)
@@ -36,4 +35,23 @@ class QuestionRegularCell: UICollectionViewCell {
         questionLabel.preferredMaxLayoutWidth = questionLabel.superview!.frame.width - 16
         questionLabel.text = question.question
     }
+    
+    @IBAction func wantClicked(_ sender: Any) {
+        questionListener?.wantClicked(id: questionIndex)
+    }
+    
+    @IBAction func thinkClicked(_ sender: Any) {
+        questionListener?.thinkClicked(id: questionIndex)
+    }
+    
+    
+    @IBAction func noClicked(_ sender: Any) {
+        questionListener?.noClicked(id: questionIndex)
+    }
+}
+
+protocol QuestionRegularListener {
+    func wantClicked(id : Int)
+    func thinkClicked(id : Int)
+    func noClicked(id: Int)
 }

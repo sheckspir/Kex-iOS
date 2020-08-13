@@ -24,14 +24,16 @@ class FirstViewController: UIViewController, UICollectionViewDataSource, UIColle
         return groups.count
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.destination is QuizViewController && sender is Int) {
-            (segue.destination as! QuizViewController).groupId = sender as! Int
+        if (segue.destination is QuizViewController && sender is QuizGroup) {
+            let group = sender as! QuizGroup
+            (segue.destination as! QuizViewController).groupId = group.id
+            (segue.destination as! QuizViewController).answered = group.answered
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let group = groups[indexPath.item]
-        performSegue(withIdentifier: "fromGroupToQuiz", sender: group.id)
+        performSegue(withIdentifier: "fromGroupToQuiz", sender: group)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
