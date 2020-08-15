@@ -21,9 +21,11 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     private let answerSaver = AnswerSaverController()
     
+    
     private var questions : [Question] = []
     
     @IBOutlet weak var quizCollectionView: UICollectionView!
+    @IBOutlet weak var mainProgressBar: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +51,6 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         if let layout = quizCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             let itemWidth = view.bounds.width
 //            todo изменить определениее высоты
@@ -123,9 +124,18 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
         scrollToNextIfPossible()
     }
     
+    
+    
     private func scrollToNextIfPossible() {
         if (questions.count - 1 <= lastScrolleded) {
-//            todo завершить тест
+            startAnimating()
+            answerSaver.saveAllNotSaved(onSuccess: {
+                self.stopAnimating()
+                self.navigationController?.popViewController(animated: true)
+            }, onError: {error in
+                self.stopAnimating()
+                self.showError(message: error.localizedDescription)
+            })
         } else {
             scrollToPosition(position: lastScrolleded + 1, animated: true)
         }
@@ -147,15 +157,18 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     private func startAnimating() {
+        mainProgressBar.startAnimating()
+        quizCollectionView.isUserInteractionEnabled = false
         
     }
     
     private func stopAnimating() {
-        
+        mainProgressBar.stopAnimating()
+        quizCollectionView.isUserInteractionEnabled = true
     }
     
     private func showError(message : String) {
-        
+        mainProgressBar.stopAnimating()
     }
     
 

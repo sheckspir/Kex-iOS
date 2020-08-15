@@ -40,10 +40,28 @@ class AnswerSaverController {
                 print("error happens \(error)")
             })
     }
-
-    func saveAllNotSaved() {
-//        todo сделать сохранеию
-        printAllNotSaved()
+    
+    func saveAllNotSaved( onSuccess : @escaping (() -> Void), onError: @escaping ((Error) -> Void)) {
+        var answers = [QuestionSavingAnswer]()
+        notSavedAnswers.forEach({one in
+            one.value.forEach({answer in
+                answers.append(QuestionSavingAnswer(groupId : one.key, questionId: answer.key, answer: answer.value))
+            })
+        })
+        if (answers.count == 0) {
+            onSuccess()
+        } else {
+            _ = provider.rx.request(.sendAnswers(answers: answers))
+            .asCompletable()
+            .subscribe(onCompleted: {
+                self.notSavedAnswers.removeAll()
+                onSuccess()
+            }, onError: {error in
+                onError(error)
+            })
+        }
+        
+        
     }
 
     private func printAllNotSaved() {

@@ -15,6 +15,7 @@ enum KexApi {
     case groupQuestions(groupId : Int)
     case getQuizQuestions(groupId : Int)
     case sendAnswer(answer : QuestionSavingAnswer)
+    case sendAnswers(answers: [QuestionSavingAnswer])
 }
 
 extension KexApi: TargetType {
@@ -22,7 +23,7 @@ extension KexApi: TargetType {
         switch self {
         case .registration, .login:
             return .post
-        case .sendAnswer:
+        case .sendAnswer, .sendAnswers:
             return .put
         default:
             return .get
@@ -45,6 +46,8 @@ extension KexApi: TargetType {
             return .requestParameters(parameters: ["groupId": groupId], encoding: URLEncoding.default)
         case let .sendAnswer(answer):
             return .requestParameters(parameters: answer.toDict(), encoding: JSONEncoding.default)
+        case let .sendAnswers(answers):
+            return .requestParameters(parameters: answers.toDict(), encoding: JSONEncoding.default)
         default:
             return .requestPlain
         }
@@ -75,6 +78,8 @@ extension KexApi: TargetType {
             return "/questions"
         case .sendAnswer:
             return "/questions/answer"
+        case .sendAnswers:
+            return "/questions/answers"
         }
         
     }

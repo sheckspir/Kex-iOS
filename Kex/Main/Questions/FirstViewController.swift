@@ -69,31 +69,22 @@ class FirstViewController: UIViewController, UICollectionViewDataSource, UIColle
         return CGSize(width: size, height: size)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func viewWillAppear(_ animated: Bool) {
         let provider = MoyaProvider<KexApi>()
-        
-        firstLoadingIndicator.startAnimating()
-        
-        _ = provider.rx.request(.allGroups)
-            .map([QuizGroup].self)
-            .do(onSuccess: { result in
-                self.firstLoadingIndicator.stopAnimating()
-                self.showGroups(groups: result)
-            }, onError: { error in
-                self.firstLoadingIndicator.stopAnimating()
-//                self.errorLabel.isHidden = false
-//                self.errorLabel.setNeedsDisplay()
-//                self.errorLabel.text = "Ошибка " + error.localizedDescription
-                print("error")
-            }, onSubscribe: {
-//                self.errorLabel.isHidden = true
-                print("onSubscribe")
-            })
-            .subscribe()
-        
-        
+                
+                firstLoadingIndicator.startAnimating()
+                
+                _ = provider.rx.request(.allGroups)
+                    .map([QuizGroup].self)
+                    .do(onSuccess: { result in
+                        self.firstLoadingIndicator.stopAnimating()
+                        self.showGroups(groups: result)
+                    }, onError: { error in
+                        self.firstLoadingIndicator.stopAnimating()
+                    }, onSubscribe: {
+                        self.firstLoadingIndicator.startAnimating()
+                    })
+                    .subscribe()
     }
     
     private func showGroups(groups : [QuizGroup]) {
