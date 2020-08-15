@@ -19,7 +19,6 @@ class QuestionRegularCell: UICollectionViewCell {
     @IBOutlet private weak var questionLabel: UILabel!
     
     func showQuestion(question : Question, listener: QuestionRegularListener) {
-        let minimumQuestionSize = questionLabel.font.lineHeight * 3
         let imageProcessor = MyCroppingImageProcessor(size: image.frame.size)
         questionIndex = question.id
         questionListener = listener
@@ -35,19 +34,6 @@ class QuestionRegularCell: UICollectionViewCell {
         nameLabel.text = question.title
         questionLabel.preferredMaxLayoutWidth = questionLabel.superview!.frame.width - 16
         questionLabel.text = question.question
-        print("height = \(questionLabel.frame.size.height) min: \(minimumQuestionSize)")
-//        if (questionLabel.bounds.height < minimumQuestionSize) {
-//            let oldBounds = questionLabel.bounds
-//            questionLabel.frame = CGRect(x: 0, y: 0, width: oldBounds.width, height: minimumQuestionSize)
-//            questionLabel.fit
-//        }
-        
-        if (questionLabel.frame.size.height < minimumQuestionSize) {
-//            let oldFrame = questionLabel.frame
-            questionLabel.frame.size.height = minimumQuestionSize
-            questionLabel.layoutIfNeeded()
-//            questionLabel.frame = CGRect(x: 0, y: 0, width: oldFrame.width, height: minimumQuestionSize)
-        }
     }
     
     @IBAction func wantClicked(_ sender: Any) {
