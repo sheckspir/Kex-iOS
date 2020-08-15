@@ -160,9 +160,10 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label Label " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPU-Lx-VoM">
-                                                            <rect key="frame" x="22.666666666666657" y="123.66666666666667" width="305" height="19.333333333333329"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label Label " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPU-Lx-VoM">
+                                                            <rect key="frame" x="22.666666666666657" y="123.66666666666669" width="305" height="58"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="u8r-gR-KWb"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="yYy-bm-lxI"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -170,21 +171,21 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0D-0i-hhV">
-                                                            <rect key="frame" x="109" y="155" width="132" height="30"/>
+                                                            <rect key="frame" x="109" y="193.66666666666666" width="132" height="30"/>
                                                             <state key="normal" title="Хочу попробовать"/>
                                                             <connections>
                                                                 <action selector="wantClicked:" destination="eHi-eg-P0j" eventType="touchUpInside" id="ifh-v4-Y9N"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmQ-vF-clw">
-                                                            <rect key="frame" x="114.66666666666669" y="193" width="121" height="30"/>
+                                                            <rect key="frame" x="114.66666666666669" y="231.66666666666666" width="121" height="29.999999999999972"/>
                                                             <state key="normal" title="Можно обсудить"/>
                                                             <connections>
                                                                 <action selector="thinkClicked:" destination="eHi-eg-P0j" eventType="touchUpInside" id="Bq4-3A-fr9"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iO6-bL-Htn">
-                                                            <rect key="frame" x="149" y="231" width="52" height="30"/>
+                                                            <rect key="frame" x="149" y="269.66666666666669" width="52" height="30"/>
                                                             <state key="normal" title="Не моё"/>
                                                             <connections>
                                                                 <action selector="noClicked:" destination="eHi-eg-P0j" eventType="touchUpInside" id="dxC-CJ-ZVo"/>
@@ -249,44 +250,45 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ny-sv-n7V">
-                                                            <rect key="frame" x="75" y="123.66666666666667" width="200" height="19.333333333333329"/>
+                                                            <rect key="frame" x="75" y="123.66666666666669" width="200" height="58"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="U4e-E2-U4g"/>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="spy-73-nIb"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WRq-PN-xaj">
-                                                            <rect key="frame" x="238.66666666666663" y="155" width="111" height="30"/>
+                                                            <rect key="frame" x="238.66666666666663" y="193.66666666666666" width="111" height="30"/>
                                                             <state key="normal" title="Хочу сделать"/>
                                                             <connections>
                                                                 <action selector="wantDoClicked:" destination="TZY-De-vtK" eventType="touchUpInside" id="hT1-VX-uBZ"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="djh-qL-FDf">
-                                                            <rect key="frame" x="119.66666666666669" y="155" width="111" height="30"/>
+                                                            <rect key="frame" x="119.66666666666669" y="193.66666666666666" width="111" height="30"/>
                                                             <state key="normal" title="Хочу для обоих"/>
                                                             <connections>
                                                                 <action selector="wanttBothClicked:" destination="TZY-De-vtK" eventType="touchUpInside" id="odN-XW-18M"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xm7-j7-VuD">
-                                                            <rect key="frame" x="114.66666666666669" y="193" width="121" height="30"/>
+                                                            <rect key="frame" x="114.66666666666669" y="231.66666666666666" width="121" height="29.999999999999972"/>
                                                             <state key="normal" title="Можно обсудить"/>
                                                             <connections>
                                                                 <action selector="thinkClicked:" destination="TZY-De-vtK" eventType="touchUpInside" id="DAf-l7-NY7"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHU-Sj-nQt">
-                                                            <rect key="frame" x="149" y="231" width="52" height="30"/>
+                                                            <rect key="frame" x="149" y="269.66666666666669" width="52" height="30"/>
                                                             <state key="normal" title="Не моё"/>
                                                             <connections>
                                                                 <action selector="noClicked:" destination="TZY-De-vtK" eventType="touchUpInside" id="qQh-b2-Mtt"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nSU-O2-7xi">
-                                                            <rect key="frame" x="0.6666666666666643" y="155" width="111" height="30"/>
+                                                            <rect key="frame" x="0.6666666666666643" y="193.66666666666666" width="111" height="30"/>
                                                             <state key="normal" title="Хочу получить"/>
                                                             <connections>
                                                                 <action selector="wantGetClicked:" destination="TZY-De-vtK" eventType="touchUpInside" id="WoC-0A-QhB"/>

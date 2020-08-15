@@ -33,7 +33,37 @@ class FirstViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let group = groups[indexPath.item]
-        performSegue(withIdentifier: "fromGroupToQuiz", sender: group)
+        if (group.answered >= group.count) {
+            let alert = UIAlertController(title: "Очистить ответы?", message: "Вы уже ответили на все вопросы, можно пройти опросник заново", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Очистить", style: .default, handler: {_ in
+                let provider = MoyaProvider<KexApi>()
+                
+                _ = provider.rx.request(.deleteAnswers(groupData: GroupDeleteInfo(groupId: group.id)))
+                .asCompletable()
+                .andThen(provider.rx.request(.allGroups))
+                    .map([QuizGroup].self)
+                .do(onSuccess: {groups in
+                    self.stopMainAnimating()
+                    self.showGroups(groups: groups)
+                    let innerGroup = groups[indexPath.item]
+                    
+                    self.performSegue(withIdentifier: "fromGroupToQuiz", sender: innerGroup)
+                }, onError: {error in
+                    self.stopMainAnimating()
+                    self.showError(message: error.localizedDescription)
+                }, onSubscribe: {
+                    self.startMainAnimating()
+                })
+                .subscribe()
+            }))
+            alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: {_ in
+                alert.dismiss(animated: true)
+            }))
+            self.present(alert, animated: true)
+            
+        } else {
+            performSegue(withIdentifier: "fromGroupToQuiz", sender: group)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -71,18 +101,16 @@ class FirstViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     override func viewWillAppear(_ animated: Bool) {
         let provider = MoyaProvider<KexApi>()
-                
-                firstLoadingIndicator.startAnimating()
-                
                 _ = provider.rx.request(.allGroups)
                     .map([QuizGroup].self)
                     .do(onSuccess: { result in
-                        self.firstLoadingIndicator.stopAnimating()
+                        self.stopMainAnimating()
                         self.showGroups(groups: result)
                     }, onError: { error in
-                        self.firstLoadingIndicator.stopAnimating()
+                        self.stopMainAnimating()
+                        self.showError(message: error.localizedDescription)
                     }, onSubscribe: {
-                        self.firstLoadingIndicator.startAnimating()
+                        self.startMainAnimating()
                     })
                     .subscribe()
     }
@@ -90,6 +118,20 @@ class FirstViewController: UIViewController, UICollectionViewDataSource, UIColle
     private func showGroups(groups : [QuizGroup]) {
         self.groups = groups
         groupsCollectionView.reloadData()
+    }
+    
+    private func startMainAnimating() {
+        firstLoadingIndicator.startAnimating()
+        groupsCollectionView.isUserInteractionEnabled = false
+    }
+    
+    private func stopMainAnimating() {
+        firstLoadingIndicator.stopAnimating()
+        groupsCollectionView.isUserInteractionEnabled = true
+    }
+    
+    private func showError(message : String) {
+        
     }
     
     

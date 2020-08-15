@@ -16,6 +16,7 @@
 		FE178EE124C8DCD1002A01A8 /* KexApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE178EE024C8DCD1002A01A8 /* KexApi.swift */; };
 		FE4D557324D0C5E10037A9BE /* QuizGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D557224D0C5E10037A9BE /* QuizGroup.swift */; };
 		FE798F7D24C8E72B0061B89C /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE798F7C24C8E72B0061B89C /* LoginRequest.swift */; };
+		FEA1208724E83E1A00D1A66C /* GroupDeleteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA1208624E83E1A00D1A66C /* GroupDeleteInfo.swift */; };
 		FEBCC6E624D6167D007CCC14 /* GroupViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBCC6E524D6167D007CCC14 /* GroupViewCell.swift */; };
 		FEC5474024B96A8E00AEBD9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5473F24B96A8E00AEBD9B /* AppDelegate.swift */; };
 		FEC5474224B96A8E00AEBD9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5474124B96A8E00AEBD9B /* SceneDelegate.swift */; };
@@ -35,7 +36,7 @@
 		FEC82D9924E780B10014D696 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC82D9824E780B10014D696 /* Gradient.swift */; };
 		FED2449E24E06AAD00B2B670 /* QuestionRegularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2449D24E06AAD00B2B670 /* QuestionRegularCell.swift */; };
 		FED244A024E06ACA00B2B670 /* QuestionYouMeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED2449F24E06ACA00B2B670 /* QuestionYouMeCell.swift */; };
-		FED244A224E07EE500B2B670 /* CenterCropImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED244A124E07EE500B2B670 /* CenterCropImageProcessor.swift */; };
+		FED244A224E07EE500B2B670 /* MyCroppingImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED244A124E07EE500B2B670 /* MyCroppingImageProcessor.swift */; };
 		FEDFEFE124C8F33A004A3E0C /* RegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDFEFE024C8F33A004A3E0C /* RegistrationRequest.swift */; };
 		FEDFEFE324C8F96C004A3E0C /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDFEFE224C8F96C004A3E0C /* Sex.swift */; };
 		FEF8E1B624CF573E0010CFA0 /* RegistrationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF8E1B524CF573E0010CFA0 /* RegistrationResult.swift */; };
@@ -74,6 +75,7 @@
 		FE178EE024C8DCD1002A01A8 /* KexApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KexApi.swift; sourceTree = "<group>"; };
 		FE4D557224D0C5E10037A9BE /* QuizGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGroup.swift; sourceTree = "<group>"; };
 		FE798F7C24C8E72B0061B89C /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		FEA1208624E83E1A00D1A66C /* GroupDeleteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDeleteInfo.swift; sourceTree = "<group>"; };
 		FEBCC6E524D6167D007CCC14 /* GroupViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewCell.swift; sourceTree = "<group>"; };
 		FEC5473C24B96A8E00AEBD9B /* Kex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC5473F24B96A8E00AEBD9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,7 +101,7 @@
 		FEC82D9824E780B10014D696 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		FED2449D24E06AAD00B2B670 /* QuestionRegularCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRegularCell.swift; sourceTree = "<group>"; };
 		FED2449F24E06ACA00B2B670 /* QuestionYouMeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionYouMeCell.swift; sourceTree = "<group>"; };
-		FED244A124E07EE500B2B670 /* CenterCropImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterCropImageProcessor.swift; sourceTree = "<group>"; };
+		FED244A124E07EE500B2B670 /* MyCroppingImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCroppingImageProcessor.swift; sourceTree = "<group>"; };
 		FEDFEFE024C8F33A004A3E0C /* RegistrationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRequest.swift; sourceTree = "<group>"; };
 		FEDFEFE224C8F96C004A3E0C /* Sex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sex.swift; sourceTree = "<group>"; };
 		FEF8E1B524CF573E0010CFA0 /* RegistrationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResult.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			children = (
 				FE798F7C24C8E72B0061B89C /* LoginRequest.swift */,
 				FEDFEFE024C8F33A004A3E0C /* RegistrationRequest.swift */,
+				FEA1208624E83E1A00D1A66C /* GroupDeleteInfo.swift */,
 				FEF8E1B524CF573E0010CFA0 /* RegistrationResult.swift */,
 				FE4D557224D0C5E10037A9BE /* QuizGroup.swift */,
 				FEDFEFE224C8F96C004A3E0C /* Sex.swift */,
@@ -290,7 +293,7 @@
 			children = (
 				FEC5477E24BAEFB000AEBD9B /* UserActions.swift */,
 				FE178EE024C8DCD1002A01A8 /* KexApi.swift */,
-				FED244A124E07EE500B2B670 /* CenterCropImageProcessor.swift */,
+				FED244A124E07EE500B2B670 /* MyCroppingImageProcessor.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -543,7 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FED2449E24E06AAD00B2B670 /* QuestionRegularCell.swift in Sources */,
-				FED244A224E07EE500B2B670 /* CenterCropImageProcessor.swift in Sources */,
+				FED244A224E07EE500B2B670 /* MyCroppingImageProcessor.swift in Sources */,
 				FE0DDD9724DCE9CC0036189A /* QuizType.swift in Sources */,
 				FE178EE124C8DCD1002A01A8 /* KexApi.swift in Sources */,
 				FEC5BC8924E3864D00ADABF1 /* AnswerSaverController.swift in Sources */,
@@ -557,6 +560,7 @@
 				FE0DDD9324DCE2930036189A /* QuizViewController.swift in Sources */,
 				FEC5477F24BAEFB000AEBD9B /* UserActions.swift in Sources */,
 				FEC5BC8B24E386C500ADABF1 /* QuestionAnswer.swift in Sources */,
+				FEA1208724E83E1A00D1A66C /* GroupDeleteInfo.swift in Sources */,
 				FEBCC6E624D6167D007CCC14 /* GroupViewCell.swift in Sources */,
 				FEDFEFE124C8F33A004A3E0C /* RegistrationRequest.swift in Sources */,
 				FEDFEFE324C8F96C004A3E0C /* Sex.swift in Sources */,

@@ -16,6 +16,7 @@ enum KexApi {
     case getQuizQuestions(groupId : Int)
     case sendAnswer(answer : QuestionSavingAnswer)
     case sendAnswers(answers: [QuestionSavingAnswer])
+    case deleteAnswers(groupData : GroupDeleteInfo)
 }
 
 extension KexApi: TargetType {
@@ -25,6 +26,8 @@ extension KexApi: TargetType {
             return .post
         case .sendAnswer, .sendAnswers:
             return .put
+        case .deleteAnswers:
+            return .delete
         default:
             return .get
         }
@@ -48,6 +51,8 @@ extension KexApi: TargetType {
             return .requestParameters(parameters: answer.toDict(), encoding: JSONEncoding.default)
         case let .sendAnswers(answers):
             return .requestParameters(parameters: answers.toDict(), encoding: JSONEncoding.default)
+        case let .deleteAnswers(groupData):
+            return .requestParameters(parameters: groupData.toDict(), encoding: JSONEncoding.default)
         default:
             return .requestPlain
         }
@@ -79,6 +84,8 @@ extension KexApi: TargetType {
         case .sendAnswer:
             return "/questions/answer"
         case .sendAnswers:
+            return "/questions/answers"
+        case .deleteAnswers:
             return "/questions/answers"
         }
         

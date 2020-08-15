@@ -15,9 +15,7 @@ class AnswerSaverController {
     var provider: MoyaProvider<KexApi>
 
     init() {
-        let logger = NetworkLoggerPlugin()
-        logger.configuration.logOptions = .verbose
-        provider = MoyaProvider<KexApi>(plugins: [logger])
+        provider = MoyaProvider<KexApi>()
     }
 
     func saveAnswer(groupId: Int, questionId: Int, answer: QuestionAnswer) {
