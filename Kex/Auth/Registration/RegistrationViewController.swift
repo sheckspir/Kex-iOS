@@ -21,6 +21,12 @@ class RegistrationViewController: UIViewController {
 
     var registrationRequest: Disposable?
 
+    override func viewDidLoad() {
+        if accountManager.isHaveUser() {
+            performSegue(withIdentifier: "toMainScreen", sender: nil)
+        }
+    }
+
     @IBAction func toAuthorizationClicked(_ sender: Any) {
         disposeRegistration(dispose: true)
         performSegue(withIdentifier: "toAuthorization", sender: nil)
@@ -80,7 +86,7 @@ class RegistrationViewController: UIViewController {
             }, onSubscribe: {
                 self.registrationButton.isEnabled = false
                 self.errorLabel.isHidden = true
-               
+
                 self.registrationIndicator.startAnimating()
                 self.registrationButton.isEnabled = false
                 self.emailTextField.isEnabled = false

@@ -13,16 +13,24 @@
 		FE0DDD9324DCE2930036189A /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0DDD9224DCE2930036189A /* QuizViewController.swift */; };
 		FE0DDD9524DCE9540036189A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0DDD9424DCE9540036189A /* Question.swift */; };
 		FE0DDD9724DCE9CC0036189A /* QuizType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0DDD9624DCE9CC0036189A /* QuizType.swift */; };
+		FE0E7BA524E8C812000F3B9A /* PartnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0E7BA424E8C812000F3B9A /* PartnersViewController.swift */; };
 		FE178EE124C8DCD1002A01A8 /* KexApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE178EE024C8DCD1002A01A8 /* KexApi.swift */; };
+		FE37481224E8A3A0004F74D4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE37481124E8A3A0004F74D4 /* SettingsViewController.swift */; };
+		FE48E4BA24EB630300EF2495 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE48E4B924EB630300EF2495 /* TitleTableViewCell.swift */; };
+		FE48E4BC24EB63B700EF2495 /* PartnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE48E4BB24EB63B700EF2495 /* PartnerCell.swift */; };
+		FE48E4BE24EB63CB00EF2495 /* PartnelConfirmableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE48E4BD24EB63CB00EF2495 /* PartnelConfirmableCell.swift */; };
+		FE48E4C124EB659600EF2495 /* PartnerSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE48E4C024EB659600EF2495 /* PartnerSearchViewController.swift */; };
 		FE4D557324D0C5E10037A9BE /* QuizGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D557224D0C5E10037A9BE /* QuizGroup.swift */; };
+		FE59EA5624E894F90059C252 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE59EA5524E894F90059C252 /* Main.storyboard */; };
+		FE59EA5824E89B390059C252 /* TabStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE59EA5724E89B390059C252 /* TabStoryboardSegue.swift */; };
+		FE59EA5D24E89EF30059C252 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE59EA5C24E89EF30059C252 /* AccountManager.swift */; };
 		FE798F7D24C8E72B0061B89C /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE798F7C24C8E72B0061B89C /* LoginRequest.swift */; };
 		FEA1208724E83E1A00D1A66C /* GroupDeleteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA1208624E83E1A00D1A66C /* GroupDeleteInfo.swift */; };
 		FEBCC6E624D6167D007CCC14 /* GroupViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBCC6E524D6167D007CCC14 /* GroupViewCell.swift */; };
 		FEC5474024B96A8E00AEBD9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5473F24B96A8E00AEBD9B /* AppDelegate.swift */; };
 		FEC5474224B96A8E00AEBD9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5474124B96A8E00AEBD9B /* SceneDelegate.swift */; };
 		FEC5474424B96A8E00AEBD9B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5474324B96A8E00AEBD9B /* FirstViewController.swift */; };
-		FEC5474624B96A8E00AEBD9B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5474524B96A8E00AEBD9B /* SecondViewController.swift */; };
-		FEC5474924B96A8E00AEBD9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC5474724B96A8E00AEBD9B /* Main.storyboard */; };
+		FEC5474924B96A8E00AEBD9B /* Tab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC5474724B96A8E00AEBD9B /* Tab.storyboard */; };
 		FEC5474B24B96A8F00AEBD9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC5474A24B96A8F00AEBD9B /* Assets.xcassets */; };
 		FEC5474E24B96A8F00AEBD9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC5474C24B96A8F00AEBD9B /* LaunchScreen.storyboard */; };
 		FEC5475924B96A8F00AEBD9B /* KexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5475824B96A8F00AEBD9B /* KexTests.swift */; };
@@ -72,8 +80,17 @@
 		FE0DDD9224DCE2930036189A /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		FE0DDD9424DCE9540036189A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		FE0DDD9624DCE9CC0036189A /* QuizType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizType.swift; sourceTree = "<group>"; };
+		FE0E7BA424E8C812000F3B9A /* PartnersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersViewController.swift; sourceTree = "<group>"; };
 		FE178EE024C8DCD1002A01A8 /* KexApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KexApi.swift; sourceTree = "<group>"; };
+		FE37481124E8A3A0004F74D4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FE48E4B924EB630300EF2495 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		FE48E4BB24EB63B700EF2495 /* PartnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCell.swift; sourceTree = "<group>"; };
+		FE48E4BD24EB63CB00EF2495 /* PartnelConfirmableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnelConfirmableCell.swift; sourceTree = "<group>"; };
+		FE48E4C024EB659600EF2495 /* PartnerSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerSearchViewController.swift; sourceTree = "<group>"; };
 		FE4D557224D0C5E10037A9BE /* QuizGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGroup.swift; sourceTree = "<group>"; };
+		FE59EA5524E894F90059C252 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FE59EA5724E89B390059C252 /* TabStoryboardSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabStoryboardSegue.swift; sourceTree = "<group>"; };
+		FE59EA5C24E89EF30059C252 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		FE798F7C24C8E72B0061B89C /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		FEA1208624E83E1A00D1A66C /* GroupDeleteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDeleteInfo.swift; sourceTree = "<group>"; };
 		FEBCC6E524D6167D007CCC14 /* GroupViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewCell.swift; sourceTree = "<group>"; };
@@ -81,8 +98,7 @@
 		FEC5473F24B96A8E00AEBD9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC5474124B96A8E00AEBD9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FEC5474324B96A8E00AEBD9B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		FEC5474524B96A8E00AEBD9B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		FEC5474824B96A8E00AEBD9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FEC5474824B96A8E00AEBD9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tab.storyboard; sourceTree = "<group>"; };
 		FEC5474A24B96A8F00AEBD9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEC5474D24B96A8F00AEBD9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEC5474F24B96A8F00AEBD9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -169,6 +185,42 @@
 			path = Question;
 			sourceTree = "<group>";
 		};
+		FE0E7BA324E8C7D0000F3B9A /* Сoincidences */ = {
+			isa = PBXGroup;
+			children = (
+				FE48E4BF24EB657100EF2495 /* PartnerSearch */,
+				FE48E4B824EB62D600EF2495 /* PartenrsList */,
+			);
+			path = "Сoincidences";
+			sourceTree = "<group>";
+		};
+		FE37481024E8A37C004F74D4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FE37481124E8A3A0004F74D4 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		FE48E4B824EB62D600EF2495 /* PartenrsList */ = {
+			isa = PBXGroup;
+			children = (
+				FE0E7BA424E8C812000F3B9A /* PartnersViewController.swift */,
+				FE48E4B924EB630300EF2495 /* TitleTableViewCell.swift */,
+				FE48E4BD24EB63CB00EF2495 /* PartnelConfirmableCell.swift */,
+				FE48E4BB24EB63B700EF2495 /* PartnerCell.swift */,
+			);
+			path = PartenrsList;
+			sourceTree = "<group>";
+		};
+		FE48E4BF24EB657100EF2495 /* PartnerSearch */ = {
+			isa = PBXGroup;
+			children = (
+				FE48E4C024EB659600EF2495 /* PartnerSearchViewController.swift */,
+			);
+			path = PartnerSearch;
+			sourceTree = "<group>";
+		};
 		FE4D557424D0CA160037A9BE /* Questions */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +229,16 @@
 				FEBCC6E524D6167D007CCC14 /* GroupViewCell.swift */,
 			);
 			path = Questions;
+			sourceTree = "<group>";
+		};
+		FE59EA5B24E89EBC0059C252 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FEC5477124B9739E00AEBD9B /* Registration */,
+				FEC5477624B9F6A500AEBD9B /* Authorization */,
+				FE59EA5C24E89EF30059C252 /* AccountManager.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		FE798F7A24C8E70B0061B89C /* Model */ = {
@@ -229,16 +291,16 @@
 		FEC5473E24B96A8E00AEBD9B /* Kex */ = {
 			isa = PBXGroup;
 			children = (
+				FE59EA5B24E89EBC0059C252 /* Auth */,
 				FEC82D9724E780990014D696 /* Views */,
 				FE798F7A24C8E70B0061B89C /* Model */,
 				FEC5477D24BAEFA100AEBD9B /* Controls */,
 				FEC5477B24BADC8B00AEBD9B /* Main */,
-				FEC5477624B9F6A500AEBD9B /* Authorization */,
-				FEC5477124B9739E00AEBD9B /* Registration */,
 				FEC5473F24B96A8E00AEBD9B /* AppDelegate.swift */,
+				FE59EA5724E89B390059C252 /* TabStoryboardSegue.swift */,
 				FEC5474124B96A8E00AEBD9B /* SceneDelegate.swift */,
-				FEC5474524B96A8E00AEBD9B /* SecondViewController.swift */,
-				FEC5474724B96A8E00AEBD9B /* Main.storyboard */,
+				FE59EA5524E894F90059C252 /* Main.storyboard */,
+				FEC5474724B96A8E00AEBD9B /* Tab.storyboard */,
 				FEC5474A24B96A8F00AEBD9B /* Assets.xcassets */,
 				FEC5474C24B96A8F00AEBD9B /* LaunchScreen.storyboard */,
 				FEC5474F24B96A8F00AEBD9B /* Info.plist */,
@@ -283,6 +345,8 @@
 		FEC5477B24BADC8B00AEBD9B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FE0E7BA324E8C7D0000F3B9A /* Сoincidences */,
+				FE37481024E8A37C004F74D4 /* Settings */,
 				FE4D557424D0CA160037A9BE /* Questions */,
 			);
 			path = Main;
@@ -415,9 +479,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE59EA5624E894F90059C252 /* Main.storyboard in Resources */,
 				FEC5474E24B96A8F00AEBD9B /* LaunchScreen.storyboard in Resources */,
 				FEC5474B24B96A8F00AEBD9B /* Assets.xcassets in Resources */,
-				FEC5474924B96A8E00AEBD9B /* Main.storyboard in Resources */,
+				FEC5474924B96A8E00AEBD9B /* Tab.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,14 +616,17 @@
 				FE178EE124C8DCD1002A01A8 /* KexApi.swift in Sources */,
 				FEC5BC8924E3864D00ADABF1 /* AnswerSaverController.swift in Sources */,
 				FE0DDD9524DCE9540036189A /* Question.swift in Sources */,
+				FE48E4BC24EB63B700EF2495 /* PartnerCell.swift in Sources */,
+				FE48E4C124EB659600EF2495 /* PartnerSearchViewController.swift in Sources */,
 				FEC5BC8D24E3885A00ADABF1 /* QuestionSavingAnswer.swift in Sources */,
-				FEC5474624B96A8E00AEBD9B /* SecondViewController.swift in Sources */,
 				FEC5474424B96A8E00AEBD9B /* FirstViewController.swift in Sources */,
 				FEF8E1B624CF573E0010CFA0 /* RegistrationResult.swift in Sources */,
 				FE798F7D24C8E72B0061B89C /* LoginRequest.swift in Sources */,
 				FEC5474024B96A8E00AEBD9B /* AppDelegate.swift in Sources */,
 				FE0DDD9324DCE2930036189A /* QuizViewController.swift in Sources */,
 				FEC5477F24BAEFB000AEBD9B /* UserActions.swift in Sources */,
+				FE59EA5D24E89EF30059C252 /* AccountManager.swift in Sources */,
+				FE48E4BE24EB63CB00EF2495 /* PartnelConfirmableCell.swift in Sources */,
 				FEC5BC8B24E386C500ADABF1 /* QuestionAnswer.swift in Sources */,
 				FEA1208724E83E1A00D1A66C /* GroupDeleteInfo.swift in Sources */,
 				FEBCC6E624D6167D007CCC14 /* GroupViewCell.swift in Sources */,
@@ -566,9 +634,13 @@
 				FEDFEFE324C8F96C004A3E0C /* Sex.swift in Sources */,
 				FED244A024E06ACA00B2B670 /* QuestionYouMeCell.swift in Sources */,
 				FEC5474224B96A8E00AEBD9B /* SceneDelegate.swift in Sources */,
+				FE0E7BA524E8C812000F3B9A /* PartnersViewController.swift in Sources */,
 				FE4D557324D0C5E10037A9BE /* QuizGroup.swift in Sources */,
+				FE37481224E8A3A0004F74D4 /* SettingsViewController.swift in Sources */,
 				FEC5477824B9F6B900AEBD9B /* Authorization.swift in Sources */,
 				FEC5477324B973BE00AEBD9B /* RegistrationViewController.swift in Sources */,
+				FE48E4BA24EB630300EF2495 /* TitleTableViewCell.swift in Sources */,
+				FE59EA5824E89B390059C252 /* TabStoryboardSegue.swift in Sources */,
 				FEC82D9924E780B10014D696 /* Gradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,12 +677,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FEC5474724B96A8E00AEBD9B /* Main.storyboard */ = {
+		FEC5474724B96A8E00AEBD9B /* Tab.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FEC5474824B96A8E00AEBD9B /* Base */,
 			);
-			name = Main.storyboard;
+			name = Tab.storyboard;
 			sourceTree = "<group>";
 		};
 		FEC5474C24B96A8F00AEBD9B /* LaunchScreen.storyboard */ = {

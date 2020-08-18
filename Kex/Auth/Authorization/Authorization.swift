@@ -18,15 +18,11 @@ class Authorization: UIViewController {
         let email = emailEditText.text
         let password = passwordTextField.text
         if !UserActions.isEmailValid(email: email) {
-            errorLabel.isHidden = false
-            errorLabel.setNeedsDisplay()
-            errorLabel.text = "Не правильный email"
+            showError(message: "Не правильный email")
             return
         }
         if password == nil || password!.count <= 0 {
-            errorLabel.isHidden = false
-            errorLabel.setNeedsDisplay()
-            errorLabel.text = "Введите пароль"
+            showError(message: "Введите пароль")
             return
         }
 
@@ -36,17 +32,32 @@ class Authorization: UIViewController {
 
         provider.rx.request(.login(loginRequest: loginData))
             .do(onSuccess: { result in
+                self.stopLoading()
                 let resultData = try result.map(RegistrationResult.self)
                 UserDefaults.standard.set(resultData.access_token, forKey: "token")
                 UserDefaults.standard.set(resultData.username, forKey: "login")
                 self.performSegue(withIdentifier: "toMainScreen", sender: nil)
             }, onError: { error in
-                self.errorLabel.isHidden = false
-                self.errorLabel.setNeedsDisplay()
-                self.errorLabel.text = "Ошибка: " + error.localizedDescription
+                self.stopLoading()
+                self.showError(message: error.localizedDescription)
             }, onSubscribe: {
-                self.errorLabel.isHidden = true
+                self.startLoading()
+                
             })
             .subscribe()
+    }
+    
+    private func showError(message : String) {
+        self.errorLabel.isHidden = false
+        self.errorLabel.setNeedsDisplay()
+        self.errorLabel.text = "Ошибка: " + message
+    }
+    
+    private func startLoading() {
+        self.errorLabel.isHidden = true
+    }
+    
+    private func stopLoading() {
+        
     }
 }

@@ -52,10 +52,25 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if let layout = quizCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            let itemWidth = view.bounds.width
+//            let itemWidth = view.bounds.width
+            let itemWidth = quizCollectionView.superview!.bounds.width
+            
+            
 //            todo изменить определениее высоты
-//            let itemHeight = view.bounds.height
-            let itemHeight = CGFloat(774)
+            let itemHeight = quizCollectionView.superview!.bounds.height
+            
+            
+            print("superview \(quizCollectionView.superview!.bounds.width)  \(quizCollectionView.superview!.frame.height)")
+            print("backgroundView \(quizCollectionView.backgroundView?.bounds.width)  \(quizCollectionView.backgroundView?.frame.height)")
+            print("justView \(view.bounds.width)  \(view.frame.height)")
+            print("subviews: \(quizCollectionView.superview!.subviews)")
+            print("subview of view \(view.subviews)")
+            
+//            layout
+//            let itemHeight = CGFloat(774)
+            
+            
+            print("width = \(itemWidth)  height = \(itemHeight)")
             layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
             layout.estimatedItemSize = layout.itemSize
             layout.invalidateLayout()

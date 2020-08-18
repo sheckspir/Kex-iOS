@@ -115,6 +115,11 @@ class FirstViewController: UIViewController, UICollectionViewDataSource, UIColle
                     .subscribe()
     }
     
+    @IBAction func onAddQuestionClicked(_ sender: Any) {
+        UserActions.writeToDeveloper()
+    }
+    
+    
     private func showGroups(groups : [QuizGroup]) {
         self.groups = groups
         groupsCollectionView.reloadData()
