@@ -27,8 +27,23 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var quizCollectionView: UICollectionView!
     @IBOutlet weak var mainProgressBar: UIActivityIndicatorView!
     
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var customBackButton: UIBarButtonItem!
+    @objc func backAction () {
+        navigationController?.popViewController(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Create the navigation bar
+        navigationBar.backIndicatorImage = (UIImage(named: "back.png"))
+        let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        backButton.setTitle("Back", for: UIControl.State.init())
+        backButton.setTitleColor(UIColor.blue, for: .normal)
+        backButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+        navigationBar.items![0].leftBarButtonItem = UIBarButtonItem(customView: backButton)
+        
         
         let provider = MoyaProvider<KexApi>()
                 
@@ -52,23 +67,9 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if let layout = quizCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-//            let itemWidth = view.bounds.width
             let itemWidth = quizCollectionView.superview!.bounds.width
             
-            
-//            todo изменить определениее высоты
             let itemHeight = quizCollectionView.superview!.bounds.height
-            
-            
-            print("superview \(quizCollectionView.superview!.bounds.width)  \(quizCollectionView.superview!.frame.height)")
-            print("backgroundView \(quizCollectionView.backgroundView?.bounds.width)  \(quizCollectionView.backgroundView?.frame.height)")
-            print("justView \(view.bounds.width)  \(view.frame.height)")
-            print("subviews: \(quizCollectionView.superview!.subviews)")
-            print("subview of view \(view.subviews)")
-            
-//            layout
-//            let itemHeight = CGFloat(774)
-            
             
             print("width = \(itemWidth)  height = \(itemHeight)")
             layout.itemSize = CGSize(width: itemWidth, height: itemHeight)

@@ -12,15 +12,28 @@ class PartnerCell: UITableViewCell {
 
     @IBOutlet weak var userLoginLabel: UILabel!
     
+    private var partner: Partner? = nil
+    private var listener : PartnerClickListener? = nil
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        if (selected && partner != nil && listener != nil) {
+            listener?.onPartnerClicked(partner: partner!)
+        }
+    }
+    
+    func showPartner(partner: Partner, listener : PartnerClickListener) {
+        self.partner = partner
+        self.listener = listener
+        userLoginLabel.text = partner.login
     }
 
+}
+
+protocol PartnerClickListener {
+    func onPartnerClicked(partner: Partner)
 }

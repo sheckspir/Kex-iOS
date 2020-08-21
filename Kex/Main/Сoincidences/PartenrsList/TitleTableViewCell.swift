@@ -9,8 +9,7 @@
 import UIKit
 
 class TitleTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,9 +17,25 @@ class TitleTableViewCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        //do nothing
     }
 
+    func showType(type: PartnerConnectionType) {
+        switch type {
+        case .CONNECTED:
+            titleLabel.text = "Ваши партнёры"
+            titleLabel.isHidden = false
+        case .NEW_REQUEST_FROM:
+            titleLabel.text = "Новые запросы"
+            titleLabel.isHidden = false
+        case .WAIT_RESPONCE:
+            titleLabel.text = "Ждём подтверждения"
+            titleLabel.isHidden = false
+        case .REJECTED:
+            titleLabel.text = "Отказанные"
+            titleLabel.isHidden = false
+        default:
+            titleLabel.isHidden = true
+        }
+    }
 }

@@ -25,8 +25,7 @@ class QuestionYouMeCell: UICollectionViewCell {
         if (question.image != nil) {
             print(question.image!)
             let url = URL(string: question.image!)
-            image.kf.setImage(with: url, options: [.processor(imageProcessor),
-                                                   .forceRefresh])
+            image.kf.setImage(with: url, options: [.processor(imageProcessor)])
         } else {
             image.image = nil
         }
