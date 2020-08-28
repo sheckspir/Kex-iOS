@@ -44,7 +44,6 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
         backButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
         navigationBar.items![0].leftBarButtonItem = UIBarButtonItem(customView: backButton)
         
-        
         let provider = MoyaProvider<KexApi>()
                 
         startAnimating()
@@ -66,6 +65,7 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        print("viewDidLayoutSubviews")
         if let layout = quizCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             let itemWidth = quizCollectionView.superview!.bounds.width
             

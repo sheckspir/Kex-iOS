@@ -36,6 +36,9 @@ class QuestionInfoViewController: UIViewController {
             navigationController?.popViewController(animated: true)
             return
         }
+        
+        let oldFrame = questionImageView.frame
+        questionImageView.frame = CGRect(x: 0, y: 0, width: questionImageView.superview!.frame.width, height: oldFrame.height)
 
         let provider = MoyaProvider<KexApi>()
 
@@ -63,6 +66,7 @@ class QuestionInfoViewController: UIViewController {
         questionTextLabel.text = question?.question
         hintLabel.text = question?.hint
         if (question?.image != nil) {
+            print("image size \(questionImageView.frame.size)")
             let imageProcessor = MyCroppingImageProcessor(size: questionImageView.frame.size)
             let url = URL(string: question!.image!)
             questionImageView.kf.setImage(with: url, options: [.processor(imageProcessor)])

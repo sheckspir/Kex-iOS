@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import Nuke
 
 class QuestionRegularCell: UICollectionViewCell {
     
@@ -15,17 +16,24 @@ class QuestionRegularCell: UICollectionViewCell {
     var questionListener : QuestionRegularListener? = nil
     
     @IBOutlet private weak var image: UIImageView!
+ 
+    
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var questionLabel: UILabel!
     
     func showQuestion(question : Question, listener: QuestionRegularListener) {
-        let imageProcessor = MyCroppingImageProcessor(size: image.frame.size)
         questionIndex = question.id
         questionListener = listener
+        let lastFrame = image.frame
+        image.frame = CGRect(x: 0, y: 0, width: contentView.superview!.frame.width, height: lastFrame.height)
+        
+        let imageProcessor = MyCroppingImageProcessor(size: image.frame.size)
+        
         if (question.image != nil) {
             print(question.image!)
             let url = URL(string: question.image!)
-            image.kf.setImage(with: url, options: [.processor(imageProcessor)])
+            image.kf.setImage(with: url, options: [.processor(imageProcessor)
+                                                   ])
         } else {
             image.image = nil
         }

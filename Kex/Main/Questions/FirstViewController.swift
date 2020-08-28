@@ -10,8 +10,10 @@ import UIKit
 import Moya
 import RxSwift
 import Kingfisher
+import Kingfisher
 
 class FirstViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     
     @IBOutlet weak var firstLoadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var groupsCollectionView: UICollectionView!
@@ -19,6 +21,12 @@ class FirstViewController: UIViewController, UICollectionViewDataSource, UIColle
     var groups : [QuizGroup] = []
     var cellID = "GroupCell"
     var countInRow = 3
+    
+    override func viewDidLoad() {
+//        todo temp
+        Kingfisher.ImageCache.default.clearDiskCache()
+        Kingfisher.ImageCache.default.clearMemoryCache()
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return groups.count
@@ -100,7 +108,7 @@ class FirstViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let provider = MoyaProvider<KexApi>()
+        let provider = MoyaProvider<KexApi>(plugins: [])
                 _ = provider.rx.request(.allGroups)
                     .map([QuizGroup].self)
                     .do(onSuccess: { result in

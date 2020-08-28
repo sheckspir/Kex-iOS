@@ -24,9 +24,15 @@ public struct MyCroppingImageProcessor: ImageProcessor {
         self.anchor = anchor
         identifier = "com.Kex.Controls.MyCroppingImageProcessor(\(size)_\(anchor))"
     }
+    
+    public func process(item: ImageProcessItem, options: KingfisherOptionsInfo) -> KFCrossPlatformImage? {
+        print("process old")
+        return process(item: item, options: KingfisherParsedOptionsInfo(options))
+    }
+
 
     public func process(item: ImageProcessItem, options: KingfisherParsedOptionsInfo) -> KFCrossPlatformImage? {
-        print("process \(item)")
+        print("process cropping \(item)")
         switch item {
         case let .image(image):
             let imageHeight = image.size.height
@@ -35,15 +41,38 @@ public struct MyCroppingImageProcessor: ImageProcessor {
             let heightScale = imageHeight / size.height
             let widthScale = imageWidth / size.width
 
-            if heightScale > 1 || widthScale > 1 {
-                let scaleFactor = widthScale > heightScale ? heightScale : widthScale
-                return image.kf.scaled(to: scaleFactor)
-                    .kf.crop(to: size, anchorOn: anchor)
-            } else {
-                return image.kf.scaled(to: options.scaleFactor)
-                    .kf.crop(to: size, anchorOn: anchor)
-            }
+            print("imageWidth = \(imageWidth)")
+            print("scale factor width \(widthScale) height \(heightScale)")
+            let scaleFactor = widthScale > heightScale ? heightScale : widthScale
+            return image.kf.scaled(to: scaleFactor)
+                .kf.crop(to: size, anchorOn: anchor)
         case .data: return (DefaultImageProcessor.default |> self).process(item: item, options: options)
         }
     }
 }
+
+public struct CroppingImageProcessor2: ImageProcessor {
+    
+    public let identifier: String
+    
+    public let size: CGSize
+    
+    public let anchor: CGPoint
+    
+    public init(size: CGSize, anchor: CGPoint = CGPoint(x: 0.5, y: 0.5)) {
+        self.size = size
+        self.anchor = anchor
+        self.identifier = "com.Kex.Controls.CroppingImageProcessor2(\(size)_\(anchor))"
+    }
+    
+    public func process(item: ImageProcessItem, options: KingfisherParsedOptionsInfo) -> KFCrossPlatformImage? {
+        print("process2")
+        switch item {
+        case .image(let image):
+            return image.kf.scaled(to: options.scaleFactor)
+                        .kf.crop(to: size, anchorOn: anchor)
+        case .data: return (DefaultImageProcessor.default |> self).process(item: item, options: options)
+        }
+    }
+}
+

@@ -140,47 +140,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wf9-EO-dFj">
-                                <rect key="frame" x="20" y="832" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wf9-EO-dFj">
+                                <rect key="frame" x="20" y="812" width="374" height="30"/>
                                 <state key="normal" title="Войти"/>
                                 <connections>
                                     <action selector="onLoginClicked:" destination="uvF-Lz-pTO" eventType="touchUpInside" id="4h2-ZD-1Lp"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="sheckspir@list.ru" borderStyle="roundedRect" placeholder="*Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X25-wp-evR">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="sheckspir@list.ru" borderStyle="roundedRect" placeholder="*Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X25-wp-evR">
                                 <rect key="frame" x="20" y="104" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="qwerty" borderStyle="roundedRect" placeholder="*Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OpB-tb-QXY">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="qwerty" borderStyle="roundedRect" placeholder="*Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OpB-tb-QXY">
                                 <rect key="frame" x="20" y="146" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wUM-UY-UIq">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Авторизация" id="5zd-5p-lRS">
-                                        <barButtonItem key="leftBarButtonItem" title="Назад" id="snt-e0-1Qo"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ошибка" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCZ-yM-EUk">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ошибка" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCZ-yM-EUk">
                                 <rect key="frame" x="20" y="188" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="X25-wp-evR" firstAttribute="leading" secondItem="8wm-rY-FzA" secondAttribute="leading" constant="20" id="1FF-nX-50F"/>
+                            <constraint firstItem="8wm-rY-FzA" firstAttribute="trailing" secondItem="OpB-tb-QXY" secondAttribute="trailing" constant="20" id="D6Q-Rg-Hs6"/>
+                            <constraint firstItem="8wm-rY-FzA" firstAttribute="trailing" secondItem="WCZ-yM-EUk" secondAttribute="trailing" constant="20" id="G7w-rA-RuH"/>
+                            <constraint firstItem="OpB-tb-QXY" firstAttribute="top" secondItem="X25-wp-evR" secondAttribute="bottom" constant="8" id="IZ3-Hl-oXK"/>
+                            <constraint firstItem="wf9-EO-dFj" firstAttribute="bottom" secondItem="8wm-rY-FzA" secondAttribute="bottom" constant="-20" id="Kdj-gu-JzQ"/>
+                            <constraint firstItem="OpB-tb-QXY" firstAttribute="leading" secondItem="8wm-rY-FzA" secondAttribute="leading" constant="20" id="MIq-HX-dTK"/>
+                            <constraint firstItem="8wm-rY-FzA" firstAttribute="trailing" secondItem="X25-wp-evR" secondAttribute="trailing" constant="20" id="SqP-hy-H6w"/>
+                            <constraint firstItem="8wm-rY-FzA" firstAttribute="trailing" secondItem="wf9-EO-dFj" secondAttribute="trailing" constant="20" id="WPS-gC-1mj"/>
+                            <constraint firstItem="wf9-EO-dFj" firstAttribute="leading" secondItem="8wm-rY-FzA" secondAttribute="leading" constant="20" id="e27-On-9ag"/>
+                            <constraint firstItem="X25-wp-evR" firstAttribute="top" secondItem="8wm-rY-FzA" secondAttribute="top" constant="16" id="hAG-28-Ikz"/>
+                            <constraint firstItem="WCZ-yM-EUk" firstAttribute="top" secondItem="OpB-tb-QXY" secondAttribute="bottom" constant="8" id="mBY-3k-sVm"/>
+                            <constraint firstItem="WCZ-yM-EUk" firstAttribute="leading" secondItem="8wm-rY-FzA" secondAttribute="leading" constant="20" id="tmC-fE-PoK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8wm-rY-FzA"/>
                     </view>
-                    <navigationItem key="navigationItem" id="F23-hO-IgP"/>
                     <connections>
                         <outlet property="emailEditText" destination="X25-wp-evR" id="K5x-Tv-Pvo"/>
                         <outlet property="errorLabel" destination="WCZ-yM-EUk" id="IDy-jg-9vx"/>

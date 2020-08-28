@@ -29,9 +29,9 @@ class PartnerSearchInfoViewController: UIViewController {
             return
         }
         if (partner?.sex == Sex.M) {
-//            todo показать картинки
+            partnerImageView.image = UIImage(named: "man")
         } else {
-//            todo показать картинки
+            partnerImageView.image = UIImage(named: "woman")
         }
         loginLabel.text = partner!.login
         nameLogin.text = partner!.name

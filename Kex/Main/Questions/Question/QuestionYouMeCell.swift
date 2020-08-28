@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class QuestionYouMeCell: UICollectionViewCell {
     
@@ -21,11 +22,15 @@ class QuestionYouMeCell: UICollectionViewCell {
     func showQuestion(question : Question, listener : QuestionYouMeListener) {
         self.questionId = question.id
         self.questionListener = listener
+        let lastFrame = image.frame
+        image.frame = CGRect(x: 0, y: 0, width: contentView.superview!.frame.width, height: lastFrame.height)
+        
         let imageProcessor = MyCroppingImageProcessor(size: image.frame.size)
         if (question.image != nil) {
             print(question.image!)
             let url = URL(string: question.image!)
-            image.kf.setImage(with: url, options: [.processor(imageProcessor)])
+            image.kf.setImage(with: url, options: [.processor(imageProcessor)
+                                                    ])
         } else {
             image.image = nil
         }
