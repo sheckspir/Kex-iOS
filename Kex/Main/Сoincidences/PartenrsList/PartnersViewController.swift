@@ -47,15 +47,23 @@ class PartnersViewController: UIViewController, UITableViewDataSource, PartnerCl
         if item is PartnerConnectionType {
             cell = tableView.dequeueReusableCell(withIdentifier: titleCell)
             (cell as? TitleTableViewCell)?.showType(type: item as! PartnerConnectionType)
+            cell?.selectionStyle = .none
         } else if item is (PartnerConnectionType, Partner?) {
             let partner = (item as! (PartnerConnectionType, Partner?)).1!
             let type = (item as! (PartnerConnectionType, Partner?)).0
             if type == PartnerConnectionType.NEW_REQUEST_FROM {
                 cell = tableView.dequeueReusableCell(withIdentifier: userActionCell)
                 (cell as! PartnelConfirmableCell).showPartner(partner: partner, listener: self)
+                cell?.selectionStyle = .none
+            } else if (type == PartnerConnectionType.CONNECTED) {
+                cell = tableView.dequeueReusableCell(withIdentifier: userCell)
+                (cell as! PartnerCell).showPartner(partner: partner, listener: self)
+                cell?.selectionStyle = .default
             } else {
                 cell = tableView.dequeueReusableCell(withIdentifier: userCell)
                 (cell as! PartnerCell).showPartner(partner: partner, listener: self)
+                cell?.selectionStyle = .none
+    
             }
         }
         return cell!

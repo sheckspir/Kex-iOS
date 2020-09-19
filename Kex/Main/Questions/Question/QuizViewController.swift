@@ -27,22 +27,30 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var quizCollectionView: UICollectionView!
     @IBOutlet weak var mainProgressBar: UIActivityIndicatorView!
     
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var customBackButton: UIBarButtonItem!
-    @objc func backAction () {
-        navigationController?.popViewController(animated: true)
-    }
+//    @IBOutlet weak var navigationBar: UINavigationBar!
+//    @IBOutlet weak var customBackButton: UIBarButtonItem!
+//    @objc func backAction () {
+//        navigationController?.popViewController(animated: true)
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //for the bar
+//        navigationBar.tintColor = UIColor.black
+//        navigationBar.backgroundColor = UIColor.blue
+//        //for the button
+//        navigationBar.backItem?.titleView?.tintColor = UIColor.white
+//        navigationBar.backItem?.title = "Lalala"
+
         // Create the navigation bar
-        navigationBar.backIndicatorImage = (UIImage(named: "back.png"))
-        let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
-        backButton.setTitle("Back", for: UIControl.State.init())
-        backButton.setTitleColor(UIColor.blue, for: .normal)
-        backButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
-        navigationBar.items![0].leftBarButtonItem = UIBarButtonItem(customView: backButton)
+//        navigationBar.backIndicatorImage = (UIImage(named: "back.png"))
+//        let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+//        backButton.setTitle("Back", for: UIControl.State.init())
+//        backButton.setTitleColor(UIColor.blue, for: .normal)
+//        backButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+//        navigationBar.items![0].leftBarButtonItem = UIBarButtonItem(customView: backButton)
+        navigationController?.setNavigationBarHidden(false, animated: false)
         
         let provider = MoyaProvider<KexApi>()
                 

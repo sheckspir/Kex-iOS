@@ -51,8 +51,7 @@ class PartnerSearchViewController: UIViewController {
                 }, onError: { error in
                     print("error \(error)")
                     self.hideLoading()
-                    self.showError(message:
-                        error.localizedDescription)
+                    self.showNotFinded()
                 }, onSubscribe: {
                     self.showLoading()
                 }, onDispose: {

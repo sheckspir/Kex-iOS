@@ -22,12 +22,6 @@ class FirstViewController: UIViewController, UICollectionViewDataSource, UIColle
     var cellID = "GroupCell"
     var countInRow = 3
     
-    override func viewDidLoad() {
-//        todo temp
-        Kingfisher.ImageCache.default.clearDiskCache()
-        Kingfisher.ImageCache.default.clearMemoryCache()
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return groups.count
     }
@@ -82,6 +76,8 @@ class FirstViewController: UIViewController, UICollectionViewDataSource, UIColle
         groupCell.nameQuestionLabelView.text = group.name
         groupCell.nameQuestionLabelView.setNeedsDisplay()
         groupCell.textCountQuestionsLabelView.text = "\(group.answered)/\(group.count)"
+        
+        groupCell.contentView.setCardView()
 
         let url = URL(string: group.imageUrl)
         
@@ -148,4 +144,26 @@ class FirstViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     
+}
+
+
+extension UIView {
+
+    func setCardView(){
+        backgroundColor = .white
+        layer.cornerRadius = 10.0
+        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        layer.shadowRadius = 6.0
+        layer.shadowOpacity = 0.7
+        
+//        layer.cornerRadius = 5.0
+//        layer.borderColor  =  UIColor.clear.cgColor
+//        layer.borderWidth = 5.0
+//        layer.shadowOpacity = 0.5
+//        layer.shadowColor =  UIColor.lightGray.cgColor
+//        layer.shadowRadius = 5.0
+//        layer.shadowOffset = CGSize(width:5, height: 5)
+//        layer.masksToBounds = true
+    }
 }

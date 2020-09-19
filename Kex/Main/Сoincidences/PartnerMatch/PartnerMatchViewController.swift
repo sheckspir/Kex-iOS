@@ -12,13 +12,14 @@ import RxSwift
 
 class PartnerMatchViewController: UIViewController, UITableViewDataSource, QuestionClickListener {
     
+    
     private let questionCellId = "QuestionInfoCell"
     private let groupCellId = "GroupTitleCell"
     private var connectionData : [ConnectionData] = []
     
     var partner : Partner? = nil
     
-    
+    @IBOutlet weak var titleNavigationBar: UINavigationBar!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var matchTableView: UITableView!
@@ -73,6 +74,9 @@ class PartnerMatchViewController: UIViewController, UITableViewDataSource, Quest
             navigationController?.popViewController(animated: true)
             return
         }
+        
+        titleNavigationBar.backgroundColor = UIColor.white
+        titleNavigationBar?.topItem?.title = "Совападения с \(partner!.name)"
         
         let provider = MoyaProvider<KexApi>(plugins: [])
         

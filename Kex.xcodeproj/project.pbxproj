@@ -57,6 +57,7 @@
 		FEDE7D5824EF0E2F006ED7EF /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE7D5724EF0E2F006ED7EF /* Offer.swift */; };
 		FEDFEFE124C8F33A004A3E0C /* RegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDFEFE024C8F33A004A3E0C /* RegistrationRequest.swift */; };
 		FEDFEFE324C8F96C004A3E0C /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDFEFE224C8F96C004A3E0C /* Sex.swift */; };
+		FEE35C9B251533B6002FE991 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE35C9A251533B6002FE991 /* MainTabViewController.swift */; };
 		FEF8E1B624CF573E0010CFA0 /* RegistrationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF8E1B524CF573E0010CFA0 /* RegistrationResult.swift */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +141,7 @@
 		FEDE7D5724EF0E2F006ED7EF /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		FEDFEFE024C8F33A004A3E0C /* RegistrationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRequest.swift; sourceTree = "<group>"; };
 		FEDFEFE224C8F96C004A3E0C /* Sex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sex.swift; sourceTree = "<group>"; };
+		FEE35C9A251533B6002FE991 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		FEF8E1B524CF573E0010CFA0 /* RegistrationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -346,6 +348,7 @@
 				FE59EA5724E89B390059C252 /* TabStoryboardSegue.swift */,
 				FEC5474124B96A8E00AEBD9B /* SceneDelegate.swift */,
 				FE59EA5524E894F90059C252 /* Main.storyboard */,
+				FEE35C9A251533B6002FE991 /* MainTabViewController.swift */,
 				FEC5474724B96A8E00AEBD9B /* Tab.storyboard */,
 				FEC5474A24B96A8F00AEBD9B /* Assets.xcassets */,
 				FEC5474C24B96A8F00AEBD9B /* LaunchScreen.storyboard */,
@@ -699,6 +702,7 @@
 				FE0E7BA524E8C812000F3B9A /* PartnersViewController.swift in Sources */,
 				FE4D557324D0C5E10037A9BE /* QuizGroup.swift in Sources */,
 				FE37481224E8A3A0004F74D4 /* SettingsViewController.swift in Sources */,
+				FEE35C9B251533B6002FE991 /* MainTabViewController.swift in Sources */,
 				FEC5477824B9F6B900AEBD9B /* Authorization.swift in Sources */,
 				FEBD67C924EDC8C4002AABB5 /* PartnerMatchViewController.swift in Sources */,
 				FEDE7D5624EF03E5006ED7EF /* QuestionInfoViewController.swift in Sources */,

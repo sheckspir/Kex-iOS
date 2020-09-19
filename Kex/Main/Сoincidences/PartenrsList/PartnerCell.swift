@@ -21,7 +21,7 @@ class PartnerCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        if (selected && partner != nil && listener != nil) {
+        if (selectionStyle != .none && selected && partner != nil && listener != nil) {
             listener?.onPartnerClicked(partner: partner!)
         }
     }
